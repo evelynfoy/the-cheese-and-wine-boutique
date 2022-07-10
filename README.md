@@ -17,6 +17,13 @@ Description of site
 
 *   ### Wireframes
 
+## Marketing Strategy and E-commerce Business Model
+-   ### Social Media Business Page
+
+## Data Schema
+
+## Models
+
 ## Features
 
 ## Technologies Used
