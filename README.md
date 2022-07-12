@@ -33,6 +33,40 @@ The sites audience would also be people looking for gifts or to buy for a party.
 
 -   ### User stories
 
+    As a **(role)** I can **(capability)**, so that **(received benefit)**
+    | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
+    | --- | ------------- |-------------| -----|
+    |  1  | Store Owner | I can add a cheese product | I can sell it in my store |
+    |  2  | Store Owner | I can edit a cheese product | I can update the details, price etc |
+    |  3  | Store Owner | I can delete a cheese product | I can stop offering it for sale |
+    |  4  | Store Owner | I can add a wine product | I can sell it in my store |
+    |  5  | Store Owner | I can edit a wine product | I can keep the details accurate |
+    |  6  | Store Owner | I can delete a wine product | I can stop offering it for sale |
+    |  7  | Store Owner | I can add a wine and cheese deal | I can sell it in my store |
+    |  8  | Store Owner | I can edit a wine and cheese deal | I can keep the details accurate |
+    |  9  | Store Owner | I can delete a wine and cheese deal | I can stop offering it for sale |
+    | 10  | Shopper | I can view the products | I can choose something to buy |
+    | 11  | Shopper | I can see a detailed page for each product | I can see all the details for it |
+    | 12  | Shopper | I can sort the list of available products | I can easily find the best choice |
+    | 13  | Shopper | I can sort a specific category of product  | I can find the best choice wine or cheese |
+    | 14  | Shopper | I can search for a product by name or description  | I can more easily find something more specific |
+    | 15  | Shopper | I can register for an account | I can have a personal account and be able to view my profile |
+    | 16  | Shopper | I can have my own user profile | I can see my orders and payment information |
+    | 17  | Shopper | I can login/logout of my account | I can keep track of them |
+    | 18  | Shopper | I can recover my password | I can recover if I forget it |
+    | 19  | Shopper | I can receive an email confirmation after registering | I can be confident my account has been created |
+    | 20  | Shopper | I can subscribe to a newsletter | I can get it sent out to me |
+    | 21  | Shopper | I can add products to a virtual shopping bag | I can purchase more than one item |
+    | 22  | Shopper | I can see a running total of the value of my shopping bag | I can decide if I want to spend more |
+    | 23  | Shopper | I can see all the items in my shopping bag | I can ensure I am heppy to proceed |
+    | 24  | Shopper | I can adjust the quantity of any product in my bag | I can decide on the right amount |
+    | 25  | Shopper | I can remove products from my bag | I can decide not to buy them |
+    | 26  | Shopper | I can view an order confirmation after checkout | I can ensure I am happy to proceed  |
+    | 27  | Shopper | I can purchase a product securely | I can get it sent out to me |
+    | 28  | Shopper | I can receive an email confirmation after purchasing | I can have a record of the transaction |
+
+&nbsp;
+
 -   ### Design
     -   #### Colour Scheme
     -   #### Typography
