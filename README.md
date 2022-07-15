@@ -82,7 +82,10 @@ The sites audience would also be people looking for gifts or to buy for a party.
         According to Google fonts 'It is ideal for headlines which call for height, as its strokes resemble those of a brush and deliver freshness and a dynamic touch in the development of words.'    
         I decided to go with [Open Sans](https://fonts.google.com/specimen/Open+Sans?query=Open+sans#about) font for the rest of the site as it is easy to read and looks good.     
         According to [Google fonts](https://fonts.google.com/) 'It is optimized for print, web, and mobile interfaces, and has excellent legibility'.    
+                 
     -   #### Imagery
+        I will add icons from [font awesome](https://fontawesome.com/) where appropriate and photos for the products on sale.
+        I will also add an appropriate image to the home page featuring cheese and wine to create interest and ensure the sites purpse is immediately evident.    
 
 *   ### Wireframes
 
