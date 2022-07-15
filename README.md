@@ -78,6 +78,10 @@ The sites audience would also be people looking for gifts or to buy for a party.
         ![Colour Palete](docs/images/colour-palete.jpg)
 
     -   #### Typography
+        I decided to go for the [Merienda One](https://fonts.google.com/specimen/Merienda+One?query=Merienda+One#about) font from [Google fonts](https://fonts.google.com/) for the logo to give a a flourish.     
+        According to Google fonts 'It is ideal for headlines which call for height, as its strokes resemble those of a brush and deliver freshness and a dynamic touch in the development of words.'    
+        I decided to go with [Open Sans](https://fonts.google.com/specimen/Open+Sans?query=Open+sans#about) font for the rest of the site as it is easy to read and looks good.     
+        According to [Google fonts](https://fonts.google.com/) 'It is optimized for print, web, and mobile interfaces, and has excellent legibility'.    
     -   #### Imagery
 
 *   ### Wireframes
