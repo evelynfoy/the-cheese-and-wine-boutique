@@ -15,6 +15,8 @@ They also want to be able to offer a newsletter telling their customers all abou
   
 <br>
 
+<h2 align="center"><img src="">Am I Responsive Screen Shot</h2>
+
 ## Target Audience
 The target audience will be adults looking to explore the world of cheese and wine.  
 
@@ -26,8 +28,6 @@ They would be interested in trying the cheese and wine package deals or new sugg
 The sites audience would also be people looking for gifts or to buy for a party.
 
 <br>
-
-<h2 align="center"><img src="">Am I Responsive Screen Shot</h2>
 
 ## User Experience (UX)
 
@@ -69,6 +69,14 @@ The sites audience would also be people looking for gifts or to buy for a party.
 
 -   ### Design
     -   #### Colour Scheme
+        The main colour I have chosen for the site is wine red, representative of what the site sells.    
+        It is a warm decadent colour which tones well with a cream cheese colour also reflecting what the site sells.  
+        I have added an additional green colour, advertised on [colorcode.io](https://colorcodes.io/red/wine-red-color-codes/)  as a complimentary colour for the wine red, to add an extra contrasting colour.   
+        I have kept the body white with dark writing for good contrast.
+
+        Here is the colour palete generated on [Colormind](http://colormind.io/).
+        ![Colour Palete](docs/images/colour-palete.jpg)
+
     -   #### Typography
     -   #### Imagery
 
