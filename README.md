@@ -88,6 +88,16 @@ The sites audience would also be people looking for gifts or to buy for a party.
         I will also add an appropriate image to the home page featuring cheese and wine to create interest and ensure the sites purpse is immediately evident.    
 
 *   ### Wireframes
+    The wireframes below were generated using [Balsamic](https://balsamiq.com/wireframes/ "Balsamic"). 
+      #### [Home - Desktop](docs/wireframes/home-desktop.png "Home Desktop wireframe")
+      #### [Home - Phone](docs/wireframes/home-phone.png "Home Phone wireframe")
+      #### [Home - Tablet](docs/wireframes/home-tablet.png "Home Tablet wireframe")
+      #### [Product Description - Desktop](docs/wireframes/product-description-desktop.png "Product Description Desktop wireframe")
+      #### [Product Description - Phone - Tablet](docs/wireframes/product-description-phone-tablet.png "Product Description Phone & Tablet wireframe")
+      #### [Products - Desktop](docs/wireframes/products-desktop.png "Product Description Desktop wireframe")
+      #### [Products - Phone - Tablet](docs/wireframes/products-phone-tablet.png "Products Phone & Tablet wireframe")
+      #### [Register](docs/wireframes/register.png "Register wireframe")
+      #### [Login](docs/wireframes/login.png "Login wireframe")
 
 ## Marketing Strategy and E-commerce Business Model
 -   ### Social Media Business Page
