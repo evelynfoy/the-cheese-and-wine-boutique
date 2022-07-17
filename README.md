@@ -43,6 +43,7 @@ The site’s audience would also be people looking for gifts or to buy for a par
     | 18  | Shopper |  recover my password | I can recover if I forget it |
     | 19  | Shopper |  receive an email confirmation after registering | I can be confident my account has been created |
     | 20  | Shopper |  subscribe to a newsletter | I can get it sent out to me |
+    | 29  | Shopper |  view the home page  | I can judge if I am interested
 
     EPIC - Products App
 
