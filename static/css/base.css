@@ -1,0 +1,22 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.logo-font {
+    font-family: 'Merienda One', 'Brush Script MT', cursive;
+}
+
+.wine-color {
+    background-color:#9B2242 ;
+}
+
+.text-cream {
+    color: #fff4b9 !important;
+}
+
+
