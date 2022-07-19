@@ -1,6 +1,11 @@
+:root {
+    --wine: #9B2242;
+    --cream: #fff4b9;
+}
 
 html {
     height: 100%;
+    font-size: 62.5%;
 }
 
 body {
@@ -11,12 +16,46 @@ body {
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
 
-.wine-color {
-    background-color:#9B2242 ;
+.small-font {
+    font-size: 1.5rem;
+}
+
+.normal-font-size {
+    font-size: 2rem;
+
+}
+
+.social-media {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.social-media a {
+    color: var(--wine)
+}
+
+.tiny-font {
+    font-size: .5rem;
+}
+
+.wine-bg-color {
+    background-color: var(--wine);
+}
+
+.text-wine {
+    color: var(--wine);
 }
 
 .text-cream {
-    color: #fff4b9 !important;
+    color: var(--cream) !important;
 }
 
 
+@media screen and (min-width: 1000px) { 
+
+    .social-media {
+        font-size: 2rem;
+        margin:0;
+    }
+    
+}
