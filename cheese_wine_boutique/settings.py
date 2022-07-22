@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-65#=vq!)f^nh+3fn54ml*ml!+#zq@7+me!zgrsgo+!$(iqn-rx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['the-cheese-and-wine-boutique.herokuapp.com', 'localhost']
 
 
 # Application definition
