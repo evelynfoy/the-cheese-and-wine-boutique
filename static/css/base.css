@@ -42,6 +42,10 @@ body {
     background-color: var(--wine);
 }
 
+.wine-border-color {
+    border-color: var(--wine)
+}
+
 .text-wine {
     color: var(--wine);
 }
@@ -50,6 +54,51 @@ body {
     color: var(--cream) !important;
 }
 
+.main-container {
+    padding:0; margin-top: 3rem;
+}
+
+/* Hero Image */
+/* Based on code from Love Running project */
+/* Creating one div with a background image inside a second div of the same size with an overflow value of hidden and creating an animation 
+/* to scale up the imaged div gives the illusion of zooming in when loaded */
+
+#hero-outer {
+    height: 40rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    
+}
+
+#hero-image {
+    height: 40rem;
+    width: 100%;
+    /* background: url("https://res.cloudinary.com/efcloud12/image/upload/v1658390528/cheese-wine-smaller3_n8lzft.jpg") no-repeat center center; */
+    background: url("https://res.cloudinary.com/efcloud12/image/upload/v1658390546/cheese-wine-smaller2_egxmky.jpg") no-repeat center center;
+    background-size: cover;
+
+    /* animates zoom effect on loading page */
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+/* creates the level of zoom for hero image */
+
+@keyframes hero-zoom {
+    from{
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* End Hero Image */
 
 @media screen and (min-width: 1000px) { 
 
