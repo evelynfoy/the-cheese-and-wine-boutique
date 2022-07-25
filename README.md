@@ -146,6 +146,11 @@ The site’s audience would also be people looking for gifts or to buy for a par
 
 ## Data Schema
 
+### ![Models](docs/erd1.jpg)    
+### ![Models](docs/erd2.jpg)    
+
+&nbsp;  
+
 ## Models
 
 ## Features
