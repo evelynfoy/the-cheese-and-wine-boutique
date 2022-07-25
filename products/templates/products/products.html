@@ -35,12 +35,13 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
                                 </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="card-footer bg-white pt-0 border-0 text-left ">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            <p class="mb-0 small-font">{{ product.name }}</p>
+                                            <p class="lead mb-0 text-left wine-bg-color text-white pl-3">{{ product.category.friendly_name }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                             <p class="lead mb-0 text-left font-weight-bold">{{ product.size }}</p>
                                         </div>
                                     </div>
