@@ -8,7 +8,7 @@
                 </a>
             </div>
             <!-- Toggler -->
-            <div class="col-3">
+            <div class="col-3 d-lg-none">
                 <button class="navbar-toggler cream-custom-toggler custom-toggler toggler-margin" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -16,7 +16,7 @@
                 
             </div>
             <!-- Nav bar -->
-            <div class="collapse navbar-collapse col-lg-5" id="navbarText">
+            <div class="collapse navbar-collapse col-lg-4" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 small-font ">
     
                     <!-- Home -->
@@ -24,6 +24,10 @@
                         <a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     
+                    <!-- Shop -->
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="{% url 'products' %}">Shop</a>
+                    </li>
                     {% if user.is_authenticated %}
     
                     <!-- Logout -->
