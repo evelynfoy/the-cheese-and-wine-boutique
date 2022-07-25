@@ -1,0 +1,58 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container fixed-top wine-bg-color">
+            <!-- Logo -->
+            <div class="col-9 col-lg-6 my-auto py-1 py-0 text-md-left">
+                <a class="nav-link main-logo-link" href="{% url 'home' %}">
+                    <h1 class=" text-cream logo-font "><strong>The Cheese and Wine Boutique</strong></h1>
+                </a>
+            </div>
+            <!-- Toggler -->
+            <div class="col-3">
+                <button class="navbar-toggler cream-custom-toggler custom-toggler toggler-margin" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                
+            </div>
+            <!-- Nav bar -->
+            <div class="collapse navbar-collapse col-lg-5" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 small-font ">
+    
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    
+                    {% if user.is_authenticated %}
+    
+                    <!-- Logout -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+    
+                    {% else %}
+    
+                    <!-- Register -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <!-- Login -->
+                    <li class="nav-item ">
+                        <a class="nav-link " href="{% url 'account_login' %}">Login</a>
+                        
+                    </li>
+                    {% endif %}
+                </ul>
+    
+                {% if user.is_authenticated %}
+                <!-- Username -->
+                <span class="navbar-text">
+                    {{ user.username }}
+                </span>
+                {% endif %}
+                
+            </div>
+        </div>
+    </nav>
+</header>

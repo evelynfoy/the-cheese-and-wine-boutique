@@ -1,6 +1,9 @@
 :root {
     --wine: #9B2242;
     --cream: #fff4b9;
+    --green: #1A9C75;
+    --grey: #2A2A2A;
+    --white: #fff;
 }
 
 html {
@@ -22,7 +25,6 @@ body {
 
 .normal-font-size {
     font-size: 2rem;
-
 }
 
 .social-media {
@@ -52,6 +54,10 @@ body {
 
 .text-cream {
     color: var(--cream) !important;
+}
+
+.text-white {
+    color: var(--white) !important;
 }
 
 .main-container {
@@ -99,11 +105,118 @@ body {
 
 /* End Hero Image */
 
+/* Styling the bootstrap navbar toggler icon */
+/* Set the border color */
+          
+.custom-toggler.navbar-toggler {
+    border-color: var(--cream);
+}
+
+/* https://www.geeksforgeeks.org/how-to-change-hamburger-toggler-color-in-bootstrap/ */
+/* Setting the stroke to green using rgb values (0, 128, 0) */
+  
+.cream-custom-toggler .navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 244, 185, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+} 
+
+.nav-bar-margin {
+    margin-top:7rem;
+}
+
+.nav-link {
+    color: var(--white)!important;
+    font-size: 2rem;
+}
+
+.navbar-text {
+    color: var(--white)!important;
+    font-size: 1.5rem;
+}
+
+.header-container {
+    padding-top: 7rem;
+    font-size: 1.5rem;
+    padding-bottom: 5rem;
+}
+
 @media screen and (min-width: 1000px) { 
 
     .social-media {
         font-size: 2rem;
         margin:0;
     }
-    
+
+    .navbar-text {
+        padding-left:2rem;
+    }
+}
+
+@media screen and (min-width: 768px) { 
+    .toggler-margin {
+        margin-left: 10rem;
+    }
+}
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem;
+    color: var(--grey);
+}
+
+.allauth-form-inner-content {
+    border-color: var(--wine);
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display:none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: var(--grey);
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    color: var(--cream);
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: var(--wine);
+    border: 1px solid var(--wine);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: var(--white);
+    background-color: var(--grey);
+    border-color: var(--grey);
+}
+
+.allauth-form-inner-content a {
+	color: var(--wine); /* text-info */
+}
+
+.btn-wine {
+    background:  var(--wine);
+    color: white;
+}
+
+.btn-outline-wine {
+    background: white;
+    color: var(--wine) !important; /* use important to overrode link colours for <a> elements */
+    border: 1px solid var(--wine);
 }
