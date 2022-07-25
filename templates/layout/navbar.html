@@ -21,7 +21,7 @@
     
                     <!-- Home -->
                     <li class="nav-item">
-                        <a class="nav-link active text-cream" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     
                     {% if user.is_authenticated %}
@@ -35,11 +35,11 @@
     
                     <!-- Register -->
                     <li class="nav-item">
-                        <a class="nav-link text-cream" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link " href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <!-- Login -->
                     <li class="nav-item ">
-                        <a class="nav-link text-cream" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link " href="{% url 'account_login' %}">Login</a>
                         
                     </li>
                     {% endif %}
@@ -47,7 +47,7 @@
     
                 {% if user.is_authenticated %}
                 <!-- Username -->
-                <span class="navbar-text text-muted">
+                <span class="navbar-text">
                     {{ user.username }}
                 </span>
                 {% endif %}
