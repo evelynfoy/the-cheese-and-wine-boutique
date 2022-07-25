@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{%  endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        {{ products }}
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+    </script>
+
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentURL = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if (selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentURL.searchParams.set("sort", sort);
+                currentURL.searchParams.set("direction", direction);
+                console.log(currentURL)
+                window.location.replace(currentURL)
+            } else {
+                currentURL.searchParams.delete("sort");
+                currentURL.searchParams.delete("direction");
+
+                window.location.replace(currentURL);
+            }
+        })
+    </script>
+{% endblock %}
