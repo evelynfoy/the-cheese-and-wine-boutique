@@ -2,7 +2,7 @@
     Contains all the tests for the products application models
 """
 from django.test import TestCase
-from .models import Category, Product, Cheese
+from .models import Category, Product, Cheese, Wine
 
 
 class TestModels(TestCase):
@@ -65,27 +65,29 @@ class TestModels(TestCase):
 
         self.assertEqual(str(cheese), 'CAVANBERT')
 
-def test_wine_creation(self):
-        """
-            Tests creation of a wine object.
-            First creates a test category type with a set value of 'wine'.
-            Then creates a test product with specific values including
-            the test product type and the name of '?'.
-            Then creates a test cheese with the product of '?'
-            Then tests that the str function on the created object returns the
-            name '?'.
-        """
-        category = Category(name='wine', friendly_name='Wine')
-        product = Product(category=category,
-                          sku=1,
-                          name='MERLOT MOULIN DE GASSAC',
-                          description="Ripe fruit and spices.",
-                          price=15.75,
-                          size='75cl')
-        wine = Wine(product=product,
-                    origin='French',
-                    production_method='Sustainable',
-                    grape='Merlot',
-                    wine_type='red')
 
-        self.assertEqual(str(wine), 'MERLOT MOULIN DE GASSAC')
+def test_wine_creation(self):
+    """
+        Tests creation of a wine object.
+        First creates a test category type with a set value of 'wine'.
+        Then creates a test product with specific values including
+        the test product type and the name of 'MERLOT MOULIN DE GASSAC'.
+        Then creates a test cheese with the product of 'MERLOT MOULIN DE
+        GASSAC'
+        Then tests that the str function on the created object returns the
+        name 'MERLOT MOULIN DE GASSAC'.
+    """
+    category = Category(name='wine', friendly_name='Wine')
+    product = Product(category=category,
+                      sku=1,
+                      name='MERLOT MOULIN DE GASSAC',
+                      description="Ripe fruit and spices.",
+                      price=15.75,
+                      size='75cl')
+    wine = Wine(product=product,
+                origin='French',
+                production_method='Sustainable',
+                grape='Merlot',
+                wine_type='red')
+
+    self.assertEqual(str(wine), 'MERLOT MOULIN DE GASSAC')

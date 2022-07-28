@@ -81,6 +81,7 @@ class Cheese(models.Model):
     def __str__(self):
         return str(self.product.name)
 
+
 class Wine(models.Model):
     """
         This model holds the wine details for the wine products available
