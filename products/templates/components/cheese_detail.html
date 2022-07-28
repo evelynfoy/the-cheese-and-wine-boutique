@@ -1,0 +1,69 @@
+
+<!-- Type is required so display for all cheeses-->
+
+
+<div class="row mt-5">
+    <div class="col-3 offset-1">
+        <p><strong>Type</strong></p>
+    </div>
+    <div class="col-8">
+        <p>{{ cheese.cheese_type }}</p>
+    </div>
+</div>
+
+<!-- Only display the attributes that have a value-->
+
+{% if cheese.milk %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <p><strong>Milk</strong></p>
+        </div>
+        <div class="col-8">
+            <p>{{ cheese.milk }}</p>
+        </div>
+    </div>
+{% endif %}
+
+{% if cheese.region %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <p><strong>Region</strong></p>
+        </div>
+        <div class="col-8">
+            <p>{{ cheese.region }}</p>
+        </div>
+    </div>
+{% endif %}
+
+{% if cheese.rennet %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <p><strong>Rennet</strong></p>
+        </div>
+        <div class="col-8">
+            <p>{{ cheese.rennet }}</p>
+        </div>
+    </div>
+{% endif %}
+
+{% if cheese.maker %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <p><strong>Maker</strong></p>
+        </div>
+        <div class="col-8">
+            <p>{{ cheese.maker }}</p>
+        </div>
+    </div>
+{% endif %}
+
+{% if cheese.age %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <p><strong>Age</strong></p>
+        </div>
+        <div class="col-8">
+            <p>{{ cheese.age }}</p>
+        </div>
+    </div>
+{% endif %}
