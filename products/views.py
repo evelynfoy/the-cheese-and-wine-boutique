@@ -2,7 +2,7 @@
 Contains all the main views for the product application
 """
 from django.shortcuts import render, get_object_or_404
-from .models import Product, Cheese
+from .models import Product, Cheese, Wine
 
 
 def all_products(request):
@@ -26,6 +26,12 @@ def product_detail(request, product_id):
         context = {
             'product': product,
             'cheese': cheese,
+        }
+    elif product.category.name == "wine":
+        wine = get_object_or_404(Wine, pk=product_id)
+        context = {
+            'product': product,
+            'wine': wine,
         }
     else:
         context = {
