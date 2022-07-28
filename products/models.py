@@ -63,6 +63,7 @@ class Cheese(models.Model):
             region: CharField(max_length=200),
             rennet: CharField(max_length=200),
             type: CharField(max_length=200),
+            age: CharField(max_length=200),
         The str function returns the name of the product as a string.
     """
     product = models.OneToOneField(
@@ -76,6 +77,30 @@ class Cheese(models.Model):
     rennet = models.CharField(max_length=20, null=True, blank=True)
     maker = models.CharField(max_length=50, null=True, blank=True)
     age = models.CharField(max_length=20, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.product.name)
+
+class Wine(models.Model):
+    """
+        This model holds the wine details for the wine products available
+        to purchase.
+        Fields held are :
+            Origin: CharField(max_length=200),
+            Grape: CharField(max_length=200),
+            Wine Type: CharField(max_length=200),
+            Production Method: CharField(max_length=200),
+        The str function returns the name of the product as a string.
+    """
+    product = models.OneToOneField(
+        Product,
+        on_delete=models.CASCADE,
+        primary_key=True,
+        )
+    wine_type = models.CharField(max_length=20)
+    origin = models.CharField(max_length=20, null=True, blank=True)
+    grape = models.CharField(max_length=20, null=True, blank=True)
+    production_method = models.CharField(max_length=20, null=True, blank=True)
 
     def __str__(self):
         return str(self.product.name)
