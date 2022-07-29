@@ -48,6 +48,8 @@
                         {% include "components/cheese_detail.html" %}
                     {% elif product.category.name == "wine" %}
                         {% include "components/wine_detail.html" %}
+                    {% elif product.category.name == "deal" %}
+                        {% include "components/deal_detail.html" %}
                     {% endif %}
                 </div>
             </div>
