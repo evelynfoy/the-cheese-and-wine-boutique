@@ -105,3 +105,29 @@ class Wine(models.Model):
 
     def __str__(self):
         return str(self.product.name)
+
+
+class Deal(models.Model):
+    """
+        This model holds the deal details for the deal products available
+        to purchase.
+        Fields held are :
+            Product1: Product model,
+            Product2: Product model,
+        The str function returns the name of the product as a string.
+    """
+    product = models.OneToOneField(Product,
+                                   on_delete=models.CASCADE,
+                                   primary_key=True,
+                                   )
+    product1 = models.OneToOneField(Product,
+                                    on_delete=models.CASCADE,
+                                    related_name="product1"
+                                    )
+    product2 = models.OneToOneField(Product,
+                                    on_delete=models.CASCADE,
+                                    related_name="product2"
+                                    )
+
+    def __str__(self):
+        return str(self.product.name)

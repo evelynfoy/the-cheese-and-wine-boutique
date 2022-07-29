@@ -2,7 +2,7 @@
     Registers all the models for the products application
 """
 from django.contrib import admin
-from .models import Product, Category, Cheese, Wine
+from .models import Product, Category, Cheese, Wine, Deal
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -55,7 +55,18 @@ class WineAdmin(admin.ModelAdmin):
     ordering = ('product',)
 
 
+class DealAdmin(admin.ModelAdmin):
+    """Deal """
+    list_display = (
+        'product',
+        'product1',
+        'product2'
+    )
+
+    ordering = ('product',)
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Cheese, CheeseAdmin)
 admin.site.register(Wine, WineAdmin)
+admin.site.register(Deal, DealAdmin)
