@@ -1,0 +1,48 @@
+
+<!-- Type is required so display for all wines-->
+
+
+<div class="row mt-5">
+    <div class="col-3 offset-1">
+        <p><strong>Type</strong></p>
+    </div>
+    <div class="col-8">
+        <p>{{ wine.wine_type }}</p>
+    </div>
+</div>
+
+<!-- Only display the attributes that have a value-->
+
+{% if wine.production_method %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <p><strong>Production Method</strong></p>
+        </div>
+        <div class="col-8">
+            <p>{{ wine.production_method }}</p>
+        </div>
+    </div>
+{% endif %}
+
+{% if wine.grape %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <p><strong>Grape</strong></p>
+        </div>
+        <div class="col-8">
+            <p>{{ wine.grape }}</p>
+        </div>
+    </div>
+{% endif %}
+
+{% if wine.origin %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <p><strong>Origin</strong></p>
+        </div>
+        <div class="col-8">
+            <p>{{ wine.origin }}</p>
+        </div>
+    </div>
+{% endif %}
+

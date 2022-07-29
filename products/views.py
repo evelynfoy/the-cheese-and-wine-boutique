@@ -1,8 +1,8 @@
 """
 Contains all the main views for the product application
 """
-from django.shortcuts import render
-from .models import Product
+from django.shortcuts import render, get_object_or_404
+from .models import Product, Cheese, Wine, Deal
 
 
 def all_products(request):
@@ -15,3 +15,32 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
+
+
+def product_detail(request, product_id):
+    """ A view to show individual product details """
+
+    product = get_object_or_404(Product, pk=product_id)
+    if product.category.name == "cheese":
+        cheese = get_object_or_404(Cheese, pk=product_id)
+        context = {
+            'product': product,
+            'cheese': cheese,
+        }
+    elif product.category.name == "wine":
+        wine = get_object_or_404(Wine, pk=product_id)
+        context = {
+            'product': product,
+            'wine': wine,
+        }
+    elif product.category.name == "deal":
+        deal = get_object_or_404(Deal, pk=product_id)
+        context = {
+            'product': product,
+            'deal': deal,
+        }
+    else:
+        context = {
+            'product': product,
+        }
+    return render(request, 'products/product_detail.html', context)

@@ -52,3 +52,82 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Cheese(models.Model):
+    """
+        This model holds the cheese details for the cheese products available
+        to purchase.
+        Fields held are :
+            milk: CharField(max_length=200),
+            region: CharField(max_length=200),
+            rennet: CharField(max_length=200),
+            type: CharField(max_length=200),
+            age: CharField(max_length=200),
+        The str function returns the name of the product as a string.
+    """
+    product = models.OneToOneField(
+        Product,
+        on_delete=models.CASCADE,
+        primary_key=True,
+        )
+    cheese_type = models.CharField(max_length=20)
+    milk = models.CharField(max_length=20, null=True, blank=True)
+    region = models.CharField(max_length=20, null=True, blank=True)
+    rennet = models.CharField(max_length=20, null=True, blank=True)
+    maker = models.CharField(max_length=50, null=True, blank=True)
+    age = models.CharField(max_length=20, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.product.name)
+
+
+class Wine(models.Model):
+    """
+        This model holds the wine details for the wine products available
+        to purchase.
+        Fields held are :
+            Origin: CharField(max_length=200),
+            Grape: CharField(max_length=200),
+            Wine Type: CharField(max_length=200),
+            Production Method: CharField(max_length=200),
+        The str function returns the name of the product as a string.
+    """
+    product = models.OneToOneField(
+        Product,
+        on_delete=models.CASCADE,
+        primary_key=True,
+        )
+    wine_type = models.CharField(max_length=20)
+    origin = models.CharField(max_length=20, null=True, blank=True)
+    grape = models.CharField(max_length=20, null=True, blank=True)
+    production_method = models.CharField(max_length=20, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.product.name)
+
+
+class Deal(models.Model):
+    """
+        This model holds the deal details for the deal products available
+        to purchase.
+        Fields held are :
+            Product1: Product model,
+            Product2: Product model,
+        The str function returns the name of the product as a string.
+    """
+    product = models.OneToOneField(Product,
+                                   on_delete=models.CASCADE,
+                                   primary_key=True,
+                                   )
+    product1 = models.OneToOneField(Product,
+                                    on_delete=models.CASCADE,
+                                    related_name="product1"
+                                    )
+    product2 = models.OneToOneField(Product,
+                                    on_delete=models.CASCADE,
+                                    related_name="product2"
+                                    )
+
+    def __str__(self):
+        return str(self.product.name)

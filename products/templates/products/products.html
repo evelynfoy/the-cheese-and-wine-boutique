@@ -26,11 +26,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if "placeholder" not in product.image.url %}
-                                <a href="">
+                                <a href="{% url 'product_detail' product.sku %}">
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'product_detail' product.sku %}">
                                     <img class="card-img-top img-fluid" src="https://res.cloudinary.com/efcloud12/image/upload/v1658769582/placeholder_jbxbzh.jpg" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
