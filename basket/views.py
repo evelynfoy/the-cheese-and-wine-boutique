@@ -1,9 +1,13 @@
-from django.shortcuts import redirect, get_object_or_404
+"""  Contains all views for the basket app """
+from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib import messages
 
 from products.models import Product
 
-# Create your views here.
+
+def view_basket(request):
+    """ A view to return the basket contents page """
+    return render(request, 'basket/basket.html')
 
 
 def add_to_basket(request, item_id):
@@ -24,6 +28,5 @@ def add_to_basket(request, item_id):
         basket[item_id] = quantity
         messages.success(request, f'Added {product.name} to your basket')
 
-    print(messages)
     request.session['basket'] = basket
     return redirect(redirect_url)
