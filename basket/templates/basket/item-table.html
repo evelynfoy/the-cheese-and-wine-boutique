@@ -1,0 +1,33 @@
+<div class="table-responsive rounded d-none d-md-block">
+    <table class="table table-sm table-borderless">
+        <thead class="text-wine">
+            <tr>
+                <th scope="col">Product Info</th>
+                <th scope="col"></th>
+                <th scope="col">Price</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Subtotal</th>
+            </tr>
+        </thead>
+
+        {% for item in basket_items %}
+        <tr>
+            <td class="p-3 w-25">
+                {% include "basket/product-image.html" %}
+            </td>
+            <td class="py-3">
+                {% include "basket/product-info.html" %}
+            </td>
+            <td class="py-3">
+                <p class="my-0">€{{ item.product.price }}</p>
+            </td>
+            <td class="py-3">
+                <p class="my-0">{{ item.quantity }}</p>
+            </td>
+            <td class="py-3">
+                <p class="my-0">€{{ item.line_total }}</p>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

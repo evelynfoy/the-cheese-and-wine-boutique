@@ -1,0 +1,5 @@
+{% if "placeholder" not in item.product.image.url %}
+<img class="img-fluid rounded small-image" src="{{ item.product.image.url }}"  alt="{{ item.product.name }}">
+{% else %}
+<img class="img-fluid rounded small-image" src="https://res.cloudinary.com/efcloud12/image/upload/v1658769582/placeholder_jbxbzh.jpg"  alt="{{ item.product.name }}">
+{% endif %}

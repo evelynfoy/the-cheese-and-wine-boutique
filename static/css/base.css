@@ -215,6 +215,11 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+.small-image {
+    width: 20rem;
+}
+
 @media screen and (min-width: 1000px) {
 
     .social-media {
@@ -231,6 +236,11 @@ body {
     .toggler-margin {
         margin-left: 10rem;
     }
+
+    .small-image {
+        width: 10rem;
+    }
+
 }
 
 .allauth-form-inner-content p {
