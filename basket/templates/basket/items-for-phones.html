@@ -1,4 +1,14 @@
 <div class="d-block d-md-none">
+    <div class="row">
+        <div class="col-12">
+            {% include "basket/basket-total.html" %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-5 mt-3">
+            {% include "basket/checkout-buttons.html" %}
+        </div>
+    </div>
     {% for item in basket_items %}
         <div class="row">
             <div class="col-12 col-sm-6 mb-2">
