@@ -62,6 +62,11 @@
                     <div>
                         <p class="my-0">
                             <i class="fas fa-shopping-basket fa-lg"></i>
+                            {% if total %}
+                                €{{ total|floatformat:2 }}
+                            {% else %}
+                                €0.00
+                            {% endif %}
                         </p>
                     </div>
                 </a>

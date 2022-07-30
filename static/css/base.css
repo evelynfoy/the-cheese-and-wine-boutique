@@ -220,6 +220,10 @@ body {
     width: 20rem;
 }
 
+a.text-primary:focus, 
+a.text-primary:hover {
+    color:var(--green)!important;
+}
 @media screen and (min-width: 1000px) {
 
     .social-media {

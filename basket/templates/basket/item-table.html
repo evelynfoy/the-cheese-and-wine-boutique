@@ -29,5 +29,25 @@
             </td>
         </tr>
         {% endfor %}
+        <tr >
+            <td colspan="5" class="pt-5 text-right">
+                <h6 class="small-font"><strong>Basket Total: ${{ total|floatformat:2 }}</strong></h6>
+                <h6 class="small-font">Delivery: ${{ delivery|floatformat:2 }}</h6>
+                <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" class="text-right">
+                <a href="{% url 'products' %}" class="btn btn-outline-wine rounded-0 btn-lg">
+                    <span>Back to Shop</span>
+                </a>
+                <a href="" class="btn btn-wine rounded-0 btn-lg">
+                    <span>Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+            </td>
+        </tr>
     </table>
 </div>
