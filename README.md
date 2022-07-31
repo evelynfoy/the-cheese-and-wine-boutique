@@ -4,6 +4,10 @@
 
 [View the live project here.](https://the-cheese-and-wine-boutique.herokuapp.com/)
 
+## User Experience (UX)
+
+### Purpose
+
 <br>
 The purpose of this project is to build an e-commerce site for the fictional cheese and wine business of the "Wilsons".
 
@@ -17,9 +21,7 @@ They also want to be able to offer a newsletter telling their customers all abou
   
 <br>
 
-
-
-## Target Audience
+### Target Audience
 The target audience will be adults looking to explore the world of cheese and wine.  
 
 They will be curious about new offerings and combinations they have not tried before. They may want advice on what to choose    
@@ -31,7 +33,7 @@ The site’s audience would also be people looking for gifts or to buy for a par
 
 <br>
 
-## User Experience (UX)
+
 
 -   ### User stories by Epic
 
