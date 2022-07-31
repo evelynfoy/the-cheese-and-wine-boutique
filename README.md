@@ -96,27 +96,25 @@ The site’s audience would also be people looking for gifts or to buy for a par
 
 
 
-&nbsp;
+### Design
+-   #### Colour Scheme
+    The main colour I have chosen for the site is wine red, representative of what the site sells.    
+    It is a warm decadent colour which tones well with a cream cheese colour also reflecting what the site sells.  
+    I have added an additional green colour, advertised on [colorcode.io](https://colorcodes.io/red/wine-red-color-codes/)  as a complementary colour for the wine red, to add an extra contrasting colour.   
+    I have kept the body white with dark writing for good contrast.
 
--   ### Design
-    -   #### Colour Scheme
-        The main colour I have chosen for the site is wine red, representative of what the site sells.    
-        It is a warm decadent colour which tones well with a cream cheese colour also reflecting what the site sells.  
-        I have added an additional green colour, advertised on [colorcode.io](https://colorcodes.io/red/wine-red-color-codes/)  as a complementary colour for the wine red, to add an extra contrasting colour.   
-        I have kept the body white with dark writing for good contrast.
+    Here is the colour palete generated on [Colormind](http://colormind.io/).
+    ![Colour Palete](docs/images/colour-palete.jpg)   
 
-        Here is the colour palete generated on [Colormind](http://colormind.io/).
-        ![Colour Palete](docs/images/colour-palete.jpg)
-
-    -   #### Typography
-        I decided to go for the [Merienda One](https://fonts.google.com/specimen/Merienda+One?query=Merienda+One#about) font from [Google fonts](https://fonts.google.com/) for the logo to give a flourish.     
-        According to Google fonts 'It is ideal for headlines which call for height, as its strokes resemble those of a brush and deliver freshness and a dynamic touch in the development of words.'    
-        I decided to go with [Open Sans](https://fonts.google.com/specimen/Open+Sans?query=Open+sans#about) font for the rest of the site as it is easy to read and looks good.     
-        According to [Google fonts](https://fonts.google.com/) 'It is optimized for print, web, and mobile interfaces, and has excellent legibility.    
+-   #### Typography
+    I decided to go for the [Merienda One](https://fonts.google.com/specimen/Merienda+One?query=Merienda+One#about) font from [Google fonts](https://fonts.google.com/) for the logo to give a flourish.     
+    According to Google fonts 'It is ideal for headlines which call for height, as its strokes resemble those of a brush and deliver freshness and a dynamic touch in the development of words.'    
+    I decided to go with [Open Sans](https://fonts.google.com/specimen/Open+Sans?query=Open+sans#about) font for the rest of the site as it is easy to read and looks good.     
+    According to [Google fonts](https://fonts.google.com/) 'It is optimized for print, web, and mobile interfaces, and has excellent legibility.    
                  
-    -   #### Imagery
-        I will add icons from [font awesome](https://fontawesome.com/) where appropriate and photos of the products on sale.
-        I will also add an appropriate image to the home page featuring cheese and wine to create interest and ensure the purpose of the site is immediately evident.    
+-   #### Imagery
+    I will add icons from [font awesome](https://fontawesome.com/) where appropriate and photos of the products on sale.
+    I will also add an appropriate image to the home page featuring cheese and wine to create interest and ensure the purpose of the site is immediately evident.    
 
 *   ### Wireframes
     The wireframes below were generated using [Balsamic](https://balsamiq.com/wireframes/ "Balsamic"). 
