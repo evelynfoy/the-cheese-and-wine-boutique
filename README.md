@@ -1,4 +1,4 @@
-<h1 align="center">The Cheese and Wine Boutique</h1>
+# The Cheese and Wine Boutique
 
 [View the live project here.](https://the-cheese-and-wine-boutique.herokuapp.com/)
 
