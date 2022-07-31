@@ -116,19 +116,19 @@ The site’s audience would also be people looking for gifts or to buy for a par
     I will add icons from [font awesome](https://fontawesome.com/) where appropriate and photos of the products on sale.
     I will also add an appropriate image to the home page featuring cheese and wine to create interest and ensure the purpose of the site is immediately evident.    
 
-*   ### Wireframes
-    The wireframes below were generated using [Balsamic](https://balsamiq.com/wireframes/ "Balsamic"). 
-      #### [Home - Desktop](docs/wireframes/home-desktop.png "Home Desktop wireframe")
-      #### [Home - Phone](docs/wireframes/home-phone.png "Home Phone wireframe")
-      #### [Home - Tablet](docs/wireframes/home-tablet.png "Home Tablet wireframe")
-      #### [Product Description - Desktop](docs/wireframes/product-description-desktop.png "Product Description Desktop wireframe")
-      #### [Product Description - Phone - Tablet](docs/wireframes/product-description-phone-tablet.png "Product Description Phone & Tablet wireframe")
-      #### [Products - Desktop](docs/wireframes/products-desktop.png "Product Description Desktop wireframe")
-      #### [Products - Phone - Tablet](docs/wireframes/products-phone-tablet.png "Products Phone & Tablet wireframe")
-      #### [Register](docs/wireframes/register.png "Register wireframe")
-      #### [Login](docs/wireframes/login.png "Login wireframe")
-      #### [View Basket - Desktop](docs/wireframes/basket-desktop.png "View Basket Desktop wireframe")
-      #### [View Basket - Phone - Tablet](docs/wireframes/basket-phone-tablet.png "View Basket Phone & Tablet wireframe")
+### Wireframes
+The wireframes below were generated using [Balsamic](https://balsamiq.com/wireframes/ "Balsamic").
+-   #### [Home - Desktop](docs/wireframes/home-desktop.png "Home Desktop wireframe")
+-   #### [Home - Phone](docs/wireframes/home-phone.png "Home Phone wireframe")
+-   #### [Home - Tablet](docs/wireframes/home-tablet.png "Home Tablet wireframe")
+-   #### [Product Description - Desktop](docs/wireframes/product-description-desktop.png "Product Description Desktop wireframe")
+-   #### [Product Description - Phone - Tablet](docs/wireframes/product-description-phone-tablet.png "Product Description Phone & Tablet wireframe")
+-   #### [Products - Desktop](docs/wireframes/products-desktop.png "Product Description Desktop wireframe")
+-   #### [Products - Phone - Tablet](docs/wireframes/products-phone-tablet.png "Products Phone & Tablet wireframe")
+-   #### [Register](docs/wireframes/register.png "Register wireframe")
+-   #### [Login](docs/wireframes/login.png "Login wireframe")
+-   #### [View Basket - Desktop](docs/wireframes/basket-desktop.png "View Basket Desktop wireframe")
+-   #### [View Basket - Phone - Tablet](docs/wireframes/basket-phone-tablet.png "View Basket Phone & Tablet wireframe")
 
 ## Marketing Strategy and E-commerce Business Model
     The Ecommerce Business Model for this project is Business to Consumer as it is for a business targeting ordinary people as customers.
