@@ -241,12 +241,18 @@ The site owner can also maintain the product list once logged in.
 
 ## Technologies Used
 
-### Languages Used
+### Languages
+* HTML
+* CSS
+* Python
 
--   [HTML5](https://en.wikipedia.org/wiki/HTML5)
--   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+### Libraries & Framework
+* Django
 
-### Frameworks, Libraries & Programs Used
+### Tools
+* [Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
+* [Google Fonts](https://fonts.google.com/ "Google Fonts")
+* [Font Awesome](https://fontawesome.com/ "Font Awesome icons" )
 
 ## Testing
 
