@@ -213,6 +213,21 @@ The marking strategy I consider best meets the needs of the Wilsons is as follow
 | Product |      | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
 | Product |      | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
 
+### Agile Methodology
+[Github issues](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues) were used to manage the development of this project. I set up a [project backlog](https://github.com/evelynfoy/the-cheese-and-wine-boutique/milestones) milestone containing all the issues at the start.    
+Then I set up a [kanban board]( https://github.com/evelynfoy/the-cheese-and-wine-boutique/projects/1) for the project and each week I created a new milestone to use to complete an agile sprint and moved in a number of issues to complete.    
+I prioritised the issues according to the MoSCoW technique and labeled them as such. Any issues outstanding at the end of the sprint were moved to the next sprint.    
+Here is a screenshot at the end of the first sprint and the beginning of the second.    
+<br>
+
+![End Sprint 1](docs/images/end-milestone1.jpg)
+![End Sprint 2](docs/images/start-milestone2.jpg)
+
+
+I used branches to implement all user stories and pull requests to merge the work into the main branch.
+Minor tweaks and documentation was done on the main branch. 
+
+
 ## Features
 ### Existing Features
 The site consists of a home page featuring a hero image, an inspirational text area, a newsletter signup form and a footer.    
