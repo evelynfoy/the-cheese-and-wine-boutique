@@ -130,26 +130,24 @@ The wireframes below were generated using [Balsamic](https://balsamiq.com/wirefr
 -   #### [View Basket - Desktop](docs/wireframes/basket-desktop.png "View Basket Desktop wireframe")
 -   #### [View Basket - Phone - Tablet](docs/wireframes/basket-phone-tablet.png "View Basket Phone & Tablet wireframe")
 
-## Marketing Strategy and E-commerce Business Model
-    The Ecommerce Business Model for this project is Business to Consumer as it is for a business targeting ordinary people as customers.
+### Marketing Strategy and E-commerce Business Model
+The Ecommerce Business Model for this project is Business to Consumer as it is for a business targeting ordinary people as customers.
 
-    The marking strategy I consider best meets the needs of the Wilsons is as follows:
-    - Use of SEO
-        I will employ SEO optimisation techniques and implementations such as semantic markup, keywords and metadata so the site ranks highly with Google.
-        I will also include a site map and robots.txt file to assist the search engines.
-    - Content marketing
-        This will be achieved by using keywords in the content of the site and also offering interesting deals which will change constantly, provide interest and promote various products.
-    - Email Marketing
-        A form will be provided where visitors can sign up for a newsletter which will contain interesting information about new products and offerings.
-    - Social Media Marketing
-        A link to the business' Social Media pages will be included to encourage organic growth.
-
-* ### Social Media Business Page
+The marking strategy I consider best meets the needs of the Wilsons is as follows:
+-   Use of SEO    
+    I will employ SEO optimisation techniques and implementations such as semantic markup, keywords and metadata so the site ranks highly with Google.    
+    I will also include a site map and robots.txt file to assist the search engines.
+-   Content marketing    
+    This will be achieved by using keywords in the content of the site and also offering interesting deals which will change constantly, provide interest and promote various products.
+-   Email Marketing    
+    A form will be provided where visitors can sign up for a newsletter which will contain interesting information about new products and offerings.
+-   Social Media Marketing    
+    A link to the business' Social Media pages will be included to encourage organic growth.    
     These screenshots were taken from the mock facebook page I created for this project.
     
-     #### ![Main facebook Page](docs/images/facebook/FacebookPage.jpg)
-     #### ![About Section](docs/images/facebook/FacebookPageAbout1.jpg)
-     #### ![About Description](docs/images/facebook/FacebookPageAbout2.jpg)
+    ![Main facebook Page](docs/images/facebook/FacebookPage.jpg)
+    ![About Section](docs/images/facebook/FacebookPageAbout1.jpg)
+    ![About Description](docs/images/facebook/FacebookPageAbout2.jpg)
 
 ## Data Schema
 
