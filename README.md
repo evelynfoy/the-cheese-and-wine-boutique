@@ -1,5 +1,7 @@
 # The Cheese and Wine Boutique
 
+<h2 align="center"><img src="">Am I Responsive Screen Shot</h2> 
+
 [View the live project here.](https://the-cheese-and-wine-boutique.herokuapp.com/)
 
 <br>
@@ -15,7 +17,7 @@ They also want to be able to offer a newsletter telling their customers all abou
   
 <br>
 
-<h2 align="center"><img src="">Am I Responsive Screen Shot</h2>
+
 
 ## Target Audience
 The target audience will be adults looking to explore the world of cheese and wine.  
