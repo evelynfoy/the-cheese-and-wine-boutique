@@ -268,11 +268,16 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used 
 
 #### Python (Pep8)
 
+#### Lighthouse 
+
 <br>
+
+### Automated Tests
+-   [Model Tests](/docs/testing/model-test.md) 
 
 ### Testing User Stories from User Experience (UX) Section
 
-### Further Testing
+### Manual Tests
 
 ## Deployment
 
