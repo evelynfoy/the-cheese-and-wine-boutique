@@ -149,14 +149,69 @@ The marking strategy I consider best meets the needs of the Wilsons is as follow
     ![About Section](docs/images/facebook/FacebookPageAbout1.jpg)
     ![About Description](docs/images/facebook/FacebookPageAbout2.jpg)
 
-## Data Schema
+<br><br>
+
+## Project Structure
+
+<br>
+
+### Data Schema
 
 ### ![Models](docs/erd1.jpg)    
 ### ![Models](docs/erd2.jpg)    
 
 &nbsp;  
 
-## Models
+### Models
+
+#### Category
+
+| Name          | Type | Key       | Other          |
+|---------------|------|-----------|----------------|
+| name          |      | CharField | max_length=254 |
+| friendly_name |      | CharField | max_length=254 |
+
+#### Product
+
+| Name        | Type            | Key                | Other                                  |
+|-------------|-----------------|--------------------|----------------------------------------|
+| category    |                 | ForeignKey(Animal) | on_delete=models.CASCADE               |
+| sku         | CharField       |                    | max_length=254, null=True, blank=True  |
+| name        | CharField       |                    | max_digits=6, decimal_places=2         |
+| description | TextField       |                    |                                        |
+| price       | DecimalField    |                    | max_digits=6, decimal_places=2         |
+| size        | CharField       |                    | max_length=254                         |
+| image_url   | URLField        |                    | max_length=1024, null=True, blank=True |
+| image       | CloudinaryField |                    | default='placeholder'                  |
+
+
+#### Cheese
+
+| Name        | Type      | Key                 | Other                                |
+|-------------|-----------|---------------------|--------------------------------------|
+| Product     |           | ForeignKey(Product) | on_delete=models.CASCADE             |
+| Milk        | CharField |                     | max_length=20, null=True, blank=True |
+| Region      | CharField |                     | max_length=20, null=True, blank=True |
+| Rennet      | TextField |                     | max_length=20, null=True, blank=True |
+| Cheese Type | CharField |                     | max_length=20, null=True, blank=True |
+| Age         | CharField |                     | max_length=20, null=True, blank=True |
+
+#### Wine
+
+| Name              | Type      | Key                 | Other                                             |
+|-------------------|-----------|---------------------|---------------------------------------------------|
+| Product           |           | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
+| Origin            | CharField |                     | max_length=20, null=True, blank=True              |
+| Grape             | CharField |                     | max_length=20, null=True, blank=True              |
+| Wine Type         | TextField |                     | max_length=20, null=True, blank=True              |
+| Production Method | CharField |                     | max_length=20, null=True, blank=True              |
+
+#### Deal
+
+| Name    | Type | Key                 | Other                                             |
+|---------|------|---------------------|---------------------------------------------------|
+| Product |      | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
+| Product |      | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
 
 ## Features
 
