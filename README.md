@@ -214,6 +214,15 @@ The marking strategy I consider best meets the needs of the Wilsons is as follow
 | Product |      | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
 
 ## Features
+### Existing Features
+The site consists of a home page featuring a hero image, an inspirational text area, a newsletter signup form and a footer.    
+It has a navbar which displays the site name and options to register, login, shop or view the contents of a virtual shopping basket.    
+The shop option displays the product available for purchase at the store and allows the user to add a specified quantity of the item to the virtual shopping basket.    
+There is a running total of the basket displayed at all times and the contents viewed or adjusted as required.    
+From the basket the checkout button provides the means for the user to purchase the items in a secure way using stripe payments.
+The user can register and login to view their orders and save their personal information or shop annoynmously.
+The site owner can also maintain the product list once logged in. 
+
 
 ## Technologies Used
 
