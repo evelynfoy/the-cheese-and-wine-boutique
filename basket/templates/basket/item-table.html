@@ -15,7 +15,7 @@
             <td class="p-3 w-25">
                 {% include "basket/product-image.html" %}
             </td>
-            <td class="py-3">
+            <td class="py-3 ">
                 {% include "basket/product-info.html" %}
             </td>
             <td class="py-3">
@@ -26,6 +26,11 @@
             </td>
             <td class="py-3">
                 <p class="my-0">€{{ item.line_total }}</p>
+            </td>
+            <td class="py-3 float-left " style="width:3rem;">
+                <p class="my-0">
+                    <a class="remove-item text-wine float-right" id="remove_{{ item.item_id }}"><i class="fa fa-times"></i></a>
+                </p>
             </td>
         </tr>
         {% endfor %}
