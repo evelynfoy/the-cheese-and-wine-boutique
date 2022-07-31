@@ -33,11 +33,9 @@ The site’s audience would also be people looking for gifts or to buy for a par
 
 <br>
 
+### User stories by Epic
 
-
--   ### User stories by Epic
-
-    EPIC - Home App
+-   #### EPIC - Home App
 
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
@@ -49,7 +47,7 @@ The site’s audience would also be people looking for gifts or to buy for a par
     | [#20](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/20)  | Shopper |  subscribe to a newsletter | I can get it sent out to me |
     | [#29](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/29)  | Shopper |  view the home page  | I can judge if I am interested
 
-    EPIC - Products App
+-   #### EPIC - Products App
 
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
@@ -69,7 +67,7 @@ The site’s audience would also be people looking for gifts or to buy for a par
     |[#13](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/13)  | Shopper |  sort a specific category of product  | I can find the best choice of wine or cheese |
     | [#14](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/14)  | Shopper |  search for a product by name or description  | I can more easily find something more specific |
     
-    EPIC - Bag App
+-   #### EPIC - Bag App
 
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
@@ -80,7 +78,7 @@ The site’s audience would also be people looking for gifts or to buy for a par
     | [#24](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/24)  | Shopper |  adjust the quantity of any product in my bag | I can decide on the right amount |
     | [#25](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/25)  | Shopper |  remove products from my bag | I can decide not to buy them |
 
-    EPIC - Checkout App
+-   #### EPIC - Checkout App
 
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
@@ -89,7 +87,7 @@ The site’s audience would also be people looking for gifts or to buy for a par
     | [#27](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/27)  | Shopper |  purchase a product securely | I can get it sent out to me |
     | [#28](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/28)  | Shopper |  receive an email confirmation after purchasing | I can have a record of the transaction |
 
-    EPIC - Profile App
+-   #### EPIC - Profile App
     
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
