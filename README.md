@@ -256,10 +256,19 @@ The site owner can also maintain the product list once logged in.
 
 ## Testing
 
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+### Code Validation
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+#### HTML Validator
+The W3C Markup Validator was used to validate every page of the project to ensure there were no syntax errors in the project.
+
+#### CSS Validator (Jigsaw)
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate every page of the project to ensure there were no syntax errors in the project.
+
+#### Javascript (jshint)
+
+#### Python (Pep8)
+
+<br>
 
 ### Testing User Stories from User Experience (UX) Section
 
