@@ -38,59 +38,59 @@ The site’s audience would also be people looking for gifts or to buy for a par
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
     | --- | ------------- |-------------| -----|
-    | 15  | Shopper |  register for an account | I can have a personal account and be able to view my profile |
-    | 17  | Shopper |  login/logout of my account | I can access my personal profile |
-    | 18  | Shopper |  recover my password | I can recover if I forget it |
-    | 19  | Shopper |  receive an email confirmation after registering | I can be confident my account has been created |
-    | 20  | Shopper |  subscribe to a newsletter | I can get it sent out to me |
-    | 29  | Shopper |  view the home page  | I can judge if I am interested
+    | [#15](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/15)  | Shopper |  register for an account | I can have a personal account and be able to view my profile |
+    | [#17](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/17)  | Shopper |  login/logout of my account | I can access my personal profile |
+    | [#18](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/18)  | Shopper |  recover my password | I can recover if I forget it |
+    | [#19](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/19)  | Shopper |  receive an email confirmation after registering | I can be confident my account has been created |
+    | [#20](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/20)  | Shopper |  subscribe to a newsletter | I can get it sent out to me |
+    | [#29](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/29)  | Shopper |  view the home page  | I can judge if I am interested
 
     EPIC - Products App
 
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
     | --- | ------------- |-------------| -----|
-    |  1  | Store Owner | add a cheese product | I can sell it in my store |
-    |  2  | Store Owner | edit a cheese product | I can update the details, price etc |
-    |  3  | Store Owner |  delete a cheese product | I can stop offering it for sale |
-    |  4  | Store Owner |  add a wine product | I can sell it in my store |
-    |  5  | Store Owner |  edit a wine product | I can keep the details accurate |
-    |  6  | Store Owner |  delete a wine product | I can stop offering it for sale |
-    |  7  | Store Owner |  add a wine and cheese deal | I can sell it in my store |
-    |  8  | Store Owner |  edit a wine and cheese deal | I can keep the details accurate |
-    |  9  | Store Owner |  delete a wine and cheese deal | I can stop offering it for sale |
-    | 10  | Shopper |  view the products | I can choose something to buy |
-    | 11  | Shopper |  see a detailed page for each product | I can see all the details for it |
-    | 12  | Shopper |  sort the list of available products | I can easily find the best choice |
-    | 13  | Shopper |  sort a specific category of product  | I can find the best choice of wine or cheese |
-    | 14  | Shopper |  search for a product by name or description  | I can more easily find something more specific |
+    |  [#1](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/1)  | Store Owner | add a cheese product | I can sell it in my store |
+    |  [#2](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/2)  | Store Owner | edit a cheese product | I can update the details, price etc |
+    |  [#3](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/3)  | Store Owner |  delete a cheese product | I can stop offering it for sale |
+    |  [#4](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/4)  | Store Owner |  add a wine product | I can sell it in my store |
+    |  [#5](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/5)  | Store Owner |  edit a wine product | I can keep the details accurate |
+    |  [#6](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/6)  | Store Owner |  delete a wine product | I can stop offering it for sale |
+    |  [#7](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/7)  | Store Owner |  add a wine and cheese deal | I can sell it in my store |
+    |  [#8](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/8)  | Store Owner |  edit a wine and cheese deal | I can keep the details accurate |
+    |  [#9](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/9)  | Store Owner |  delete a wine and cheese deal | I can stop offering it for sale |
+    | [#10](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/10)  | Shopper |  view the products | I can choose something to buy |
+    | [#11](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/11)  | Shopper |  see a detailed page for each product | I can see all the details for it |
+    | [#12](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/12)  | Shopper |  sort the list of available products | I can easily find the best choice |
+    |[#13](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/13)  | Shopper |  sort a specific category of product  | I can find the best choice of wine or cheese |
+    | [#14](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/14)  | Shopper |  search for a product by name or description  | I can more easily find something more specific |
     
     EPIC - Bag App
 
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
     | --- | ------------- |-------------| -----|
-    | 21  | Shopper |  add products to a virtual shopping bag | I can purchase more than one item |
-    | 22  | Shopper |  see a running total of the value of my shopping bag | I can decide if I want to spend more |
-    | 23  | Shopper |  see all the items in my shopping bag | I can ensure I am happy to proceed |
-    | 24  | Shopper |  adjust the quantity of any product in my bag | I can decide on the right amount |
-    | 25  | Shopper |  remove products from my bag | I can decide not to buy them |
+    | [#21](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/21)  | Shopper |  add products to a virtual shopping bag | I can purchase more than one item |
+    | [#22](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/22)  | Shopper |  see a running total of the value of my shopping bag | I can decide if I want to spend more |
+    | [#23](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/23)  | Shopper |  see all the items in my shopping bag | I can ensure I am happy to proceed |
+    | [#24](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/24)  | Shopper |  adjust the quantity of any product in my bag | I can decide on the right amount |
+    | [#25](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/25)  | Shopper |  remove products from my bag | I can decide not to buy them |
 
     EPIC - Checkout App
 
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
     | --- | ------------- |-------------| -----|
-    | 26  | Shopper |  view an order confirmation after checkout | I can ensure I haven't made a mistake |
-    | 27  | Shopper |  purchase a product securely | I can get it sent out to me |
-    | 28  | Shopper |  receive an email confirmation after purchasing | I can have a record of the transaction |
+    | [#26](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/26)  | Shopper |  view an order confirmation after checkout | I can ensure I haven't made a mistake |
+    | [#27](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/27)  | Shopper |  purchase a product securely | I can get it sent out to me |
+    | [#28](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/28)  | Shopper |  receive an email confirmation after purchasing | I can have a record of the transaction |
 
     EPIC - Profile App
     
     As a **(role)** I can **(capability)**, so that **(received benefit)**
     | No. | As a **(role)**        | I can **(capability)**         | so that **(received benefit)**  |
     | --- | ------------- |-------------| -----|
-    | 16  | Shopper |  have my own user profile | I can see my orders and payment information |
+    | [#16](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/16)  | Shopper |  have my own user profile | I can see my orders and payment information |
 
 
 
@@ -127,6 +127,8 @@ The site’s audience would also be people looking for gifts or to buy for a par
       #### [Products - Phone - Tablet](docs/wireframes/products-phone-tablet.png "Products Phone & Tablet wireframe")
       #### [Register](docs/wireframes/register.png "Register wireframe")
       #### [Login](docs/wireframes/login.png "Login wireframe")
+      #### [View Basket - Desktop](docs/wireframes/basket-desktop.png "View Basket Desktop wireframe")
+      #### [View Basket - Phone - Tablet](docs/wireframes/basket-phone-tablet.png "View Basket Phone & Tablet wireframe")
 
 ## Marketing Strategy and E-commerce Business Model
     The Ecommerce Business Model for this project is Business to Consumer as it is for a business targeting ordinary people as customers.
@@ -142,7 +144,12 @@ The site’s audience would also be people looking for gifts or to buy for a par
     - Social Media Marketing
         A link to the business' Social Media pages will be included to encourage organic growth.
 
--   ### Social Media Business Page
+* ### Social Media Business Page
+    These screenshots were taken from the mock facebook page I created for this project.
+    
+     #### ![Main facebook Page](docs/images/facebook/FacebookPage.jpg)
+     #### ![About Section](docs/images/facebook/FacebookPageAbout1.jpg)
+     #### ![About Description](docs/images/facebook/FacebookPageAbout2.jpg)
 
 ## Data Schema
 
