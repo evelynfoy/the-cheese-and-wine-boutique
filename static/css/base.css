@@ -224,6 +224,21 @@ a.text-primary:focus,
 a.text-primary:hover {
     color:var(--green)!important;
 }
+
+a.remove-item:focus,
+a.remove-item:hover {
+    color:var(--wine)!important;
+    font-size: 1.6rem;
+}
+
+.quantity-label {
+    margin-top:.4rem;
+}
+
+.quantity-padding {
+    padding-top: .6rem!important;
+}
+
 @media screen and (min-width: 1000px) {
 
     .social-media {

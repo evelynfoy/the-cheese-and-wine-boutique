@@ -21,8 +21,8 @@
             <td class="py-3">
                 <p class="my-0">€{{ item.product.price }}</p>
             </td>
-            <td class="py-3">
-                <p class="my-0">{{ item.quantity }}</p>
+            <td class="quantity-padding">
+                {% include "basket/quantity-form.html" %}
             </td>
             <td class="py-3">
                 <p class="my-0">€{{ item.line_total }}</p>
