@@ -1,5 +1,5 @@
 """  Contains all views for the basket app """
-from django.shortcuts import redirect, get_object_or_404, render
+from django.shortcuts import redirect, get_object_or_404, render, HttpResponse
 from django.contrib import messages
 
 from products.models import Product
@@ -15,7 +15,6 @@ def add_to_basket(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    # size = request.POST.get('size')
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
 
@@ -30,3 +29,22 @@ def add_to_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(redirect_url)
+
+
+def remove_from_basket(request, item_id):
+    """ Remove the specified product from the basket """
+
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        # size = request.POST['product_size']
+        basket = request.session.get('basket', {})
+        print(basket, item_id, product)
+        basket.pop(item_id)
+        messages.success(request, f'Removed {product.name} from your basket')
+
+        request.session['basket'] = basket
+        return HttpResponse(status=200)
+
+    except OSError as product_not_found:
+        messages.error(request, f'Error removing item: {product_not_found}')
+        return HttpResponse(status=500)

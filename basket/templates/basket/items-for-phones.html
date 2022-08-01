@@ -22,7 +22,9 @@
                 <p class="my-0">Quantity: {{ item.quantity }}</p>
                 <p><strong>Subtotal: </strong>€{{ item.line_total }}</p>
             </div>
-            
+            <div class="col-12 col-sm-6 mb-2 ">
+                <a class="remove-item text-wine font-weight-bold " id="remove_{{ item.item_id }}">Remove</a>
+            </div>
         </div>
         <div class="row">
             <div class="col-12">
