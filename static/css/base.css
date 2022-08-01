@@ -216,6 +216,10 @@ body {
     overflow-y: auto;
 }
 
+.form-control {
+    font-size: 1.5rem;
+}
+
 .small-image {
     width: 20rem;
 }
