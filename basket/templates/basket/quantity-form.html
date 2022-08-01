@@ -1,0 +1,19 @@
+<form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="input-group ">
+            <label for="qty_{{ item.item_id }}" class="quantity-label d-sm-none">Quantity: </label>
+            <input class="form-control qty_input small-font ml-3 ml-sm-0" type="number" 
+                name="quantity" value="{{ item.quantity }}" min="1" max="99" 
+                id="qty_{{ item.item_id }}">
+            <div class="input-group-append">
+                <button class="update-link border border-white text-wine rounded-0" aria-label="Update quantity button">
+                    <span>
+                        <i class="fas fa-edit"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
