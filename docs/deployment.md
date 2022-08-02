@@ -4,4 +4,5 @@ Add CLOUDINARY_URL to Heroku
 pip3 install django-crispy-forms
 Add to installed apps in Settings
 Add Crispy Template pack = 'Bootstrap4' in Settings
+pip3 install stripe
 
