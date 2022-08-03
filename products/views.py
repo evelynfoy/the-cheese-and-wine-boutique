@@ -3,6 +3,7 @@ Contains all the main views for the product application
 """
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Cheese, Wine, Deal
+from .forms import ProductForm
 
 
 def all_products(request):
@@ -44,3 +45,15 @@ def product_detail(request, product_id):
             'product': product,
         }
     return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+    """ Add product to the store """
+    
+    form = ProductForm(request.POST, request.FILES)
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

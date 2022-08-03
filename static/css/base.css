@@ -13,6 +13,7 @@ html {
 
 body {
     font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.6rem;
 }
 
 .logo-font {
@@ -216,6 +217,9 @@ body {
     overflow-y: auto;
 }
 
+.btn {
+    font-size: 1.6rem;
+}
 .form-control {
     font-size: 1.5rem;
 }
