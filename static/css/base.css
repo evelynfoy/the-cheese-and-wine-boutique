@@ -247,6 +247,10 @@ a.remove-item:hover {
     padding-top: .6rem!important;
 }
 
+.font-large {
+    font-size: 3rem;
+}
+
 @media screen and (min-width: 1000px) {
 
     .social-media {
@@ -268,6 +272,9 @@ a.remove-item:hover {
         width: 10rem;
     }
 
+    .font-large {
+        font-size: 2.5rem;
+    }
 }
 
 .allauth-form-inner-content p {
