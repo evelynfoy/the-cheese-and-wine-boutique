@@ -154,7 +154,7 @@ class TestViews(TestCase):
                                         password='tommy')
         self.client.force_login(user=user)
         response = self.client.post('/products/add/',
-                                    {'category': category,
+                                    {'category': category.id,
                                      'sku': ['1'],
                                      'name': 'CAVANBERT',
                                      'description': "A mild soft cheese.",
