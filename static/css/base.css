@@ -254,8 +254,10 @@ a.remove-item:hover {
 
 .dropdown-menu {
     font-size: 1.6rem;
-    left: 0;
+    /* right: -70px; */
     background-color: var(--wine);
+    left:auto;
+    margin-top:0;
 
 }
 
@@ -274,6 +276,11 @@ a.remove-item:hover {
 
     .navbar-text {
         padding-left: 2rem;
+    }
+
+    .dropdown-menu {
+        right: -12px;
+    
     }
 }
 
