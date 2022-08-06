@@ -13,6 +13,7 @@ html {
 
 body {
     font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.6rem;
 }
 
 .logo-font {
@@ -159,6 +160,7 @@ body {
 
 .custom-toast {
     overflow: visible; 
+    font-size:1.6rem;
 }
 
 .toast-capper {
@@ -216,6 +218,9 @@ body {
     overflow-y: auto;
 }
 
+.btn {
+    font-size: 1.6rem;
+}
 .form-control {
     font-size: 1.5rem;
 }
@@ -243,6 +248,25 @@ a.remove-item:hover {
     padding-top: .6rem!important;
 }
 
+.font-large {
+    font-size: 3rem;
+}
+
+.dropdown-menu {
+    font-size: 1.6rem;
+    /* right: -70px; */
+    background-color: var(--wine);
+    left:auto;
+    margin-top:0;
+
+}
+
+.dropdown-item {
+    
+    color: var(--white)
+
+}
+
 @media screen and (min-width: 1000px) {
 
     .social-media {
@@ -252,6 +276,11 @@ a.remove-item:hover {
 
     .navbar-text {
         padding-left: 2rem;
+    }
+
+    .dropdown-menu {
+        right: -12px;
+    
     }
 }
 
@@ -264,6 +293,9 @@ a.remove-item:hover {
         width: 10rem;
     }
 
+    .font-large {
+        font-size: 2.5rem;
+    }
 }
 
 .allauth-form-inner-content p {
