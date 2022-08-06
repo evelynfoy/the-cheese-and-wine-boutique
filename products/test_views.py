@@ -2,6 +2,7 @@
     Contains all the tests views for the products application
 """
 from django.test import TestCase
+from django.contrib.auth.models import User
 from .models import Category, Product, Cheese, Wine, Deal
 
 
@@ -115,3 +116,54 @@ class TestViews(TestCase):
                             product2=product_wine)
         response = self.client.get(f'/products/{product_deal.id}/')
         self.assertEqual(response.status_code, 200)
+
+    def test_product_add(self):
+        """
+            Tests rendering of 'products/add' url.
+            Checks that a status of 200 is received on requesting this
+            url.
+        """
+        response = self.client.get('/products/add/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_product_add_template(self):
+        """
+            Tests templates rendered for 'products/add/' url.
+            Checks that a status of 200 is received on requesting this
+            url.
+        """
+        response = self.client.get('/products/add/')
+        self.assertTemplateUsed(response, 'products/add_product.html')
+        self.assertTemplateUsed(response, 'base.html')
+
+    def test_can_add_product(self):
+        """
+            Tests that an product entry can be added using the 'product/add/ url.
+            Creates a test category with a set value of 'cheese'.
+            Creates a test product.
+            Creates a user.
+            Logs on as this user.
+            Then checks that a status of 200 is received on requesting the
+            post function for the 'product/add/' url passing an object with product
+            details for the test product.
+        """
+        category = Category.objects.create(name='cheese',
+                                           friendly_name='Cheese')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy')
+        self.client.force_login(user=user)
+        response = self.client.post('/products/add/',
+                                    {'category': category,
+                                     'sku': ['1'],
+                                     'name': 'CAVANBERT',
+                                     'description': "A mild soft cheese.",
+                                     'price': [8.00],
+                                     'size': ['230G'],
+                                     'milk': ['cow'],
+                                     'region': ['Ireland'],
+                                     'rennet': ['vegetarian'],
+                                     'cheese_type': ['soft'],
+                                     'age': ['4-10 weeks']
+                                     })
+        self.assertRedirects(response, '/products/1/')
