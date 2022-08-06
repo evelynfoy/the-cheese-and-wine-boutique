@@ -1,4 +1,4 @@
-from django.shortcuts import (render, reverse, redirect)
+from django.shortcuts import (render, reverse, redirect, get_object_or_404)
 from django.contrib import messages
 from django.conf import settings
 
@@ -7,7 +7,7 @@ import stripe
 from basket.contexts import basket_contents
 from products.models import Product
 from .forms import OrderForm
-from .models import OrderLineItem
+from .models import Order, OrderLineItem
 
 
 def checkout(request):
@@ -89,11 +89,18 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     # save_info = request.session.get('save_info')
-    # order = get_object_or_404(Order, order_number=order_number)
+    order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}.')
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
 
     if 'basket' in request.session:
         del request.session['basket']
 
-    return redirect(reverse('products'))
+    template = 'checkout/checkout_success.html'
+
+    context = {
+        'order': order,
+    }
+
+    return render(request, template, context)
