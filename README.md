@@ -229,14 +229,109 @@ Minor tweaks and documentation was done on the main branch.
 
 
 ## Features
-### Existing Features
 The site consists of a home page featuring a hero image, an inspirational text area, a newsletter signup form and a footer.    
 It has a navbar which displays the site name and options to register, login, shop or view the contents of a virtual shopping basket.    
-The shop option displays the product available for purchase at the store and allows the user to add a specified quantity of the item to the virtual shopping basket.    
-There is a running total of the basket displayed at all times and the contents viewed or adjusted as required.    
+The shop option displays the products available for purchase at the store and allows the user to add a specified quantity of the item to the virtual shopping basket.    
+There is a running total of the basket displayed at all times and the contents can be viewed or adjusted as required.    
 From the basket the checkout button provides the means for the user to purchase the items in a secure way using stripe payments.
 The user can register and login to view their orders and save their personal information or shop annoynmously.
 The site owner can also maintain the product list once logged in. 
+
+### Existing Features
+
+Navigation Bar
+
+The navigation bar is fixed in position at the top of the page.
+It includes 
+1) The company logo which is also a link to the home page.
+2) Links to the other available pages on the site e.g. the shop or products, the basket and the user options which vary on login.
+3) A running total of the contents of the customers virtual shopping basket. This doubles as a link to the basket page.
+
+The user options are represented by a font awesome icon which on click displays a dropdown menu with the following options:-
+1) If the user is staff then Project Administration.
+2) If user signed in then the user name is displayed and a logout link
+3) If no user is logged in then both a register and login option are presented.
+
+The navigation bar is fully responsive and the links are replaced on smaller screens with a hamburger icon.    
+The User options and basket total move to the next line.
+
+Hero Image
+
+-   The landing page image is an inticing photograph of a selection of wine and cheese which features a zoom in affect on page load.
+
+Inspirational Section
+
+-   This area features headings and text to interest the user in the site and entice them to explore further.
+
+The Subscribe to Newsletter Section
+
+-   This section invites the user to subscribe to the businesses newsletter by entering their email address.    
+    It uses an email marketing company called Mailchimp to provide this service.
+
+Footer
+
+-   The footer features the businesses address and email and a link to their facebook page.
+
+Shop
+
+-   This page displays all the products that are available to purchase on the site.
+-   There are three different types of product.
+    -   Cheese
+    -   Wine
+    -   Deal
+-   Each type holds different kinds of information on the product e.g. milk for cheeses or grape for wine.
+-   The Deal type allows the business owner to package two items together for a special price. This could    
+    be two cheeses, two wines or a wine and a cheese.
+
+
+Product Details
+
+-   Clicking on a product displays the full details for that item.
+-   Only the appropriate details appear for the product e.g. cheese details for cheeses etc.
+-   There is a quantity field that takes a number and an `Add to basket` button to select this product for purchase.
+-   The user can type in an amount or use the arrow buttons which don't go below 1.
+-   When an item is added to the basket a success message appears informing the user.    
+    It also summarises the contents of the basket and shows the total excluding delivery.
+    There is also a button to go to checkout. A secure payment facilitiy is indicated by displaying a lock item on the button.
+-   The message can be dismisses by clicking the x.
+
+
+Product Administration
+
+-   This menu option is available to staff only.
+-   It displays the products and allows items to be added, updated or deleted.
+
+-   The Category is a drop down menu offering three choices.    
+    These categories can be maintained by the owner who can add more if required via the django admin screen.
+-   The details requested differ depending on which category is chosen.    
+    Choosing the cheese category displays the cheese related details.    
+    Choosing the wine category displays the wine related details.     
+    Choosing the deal category allows two items to be selected from a dropdown menu.
+-   There are a core set of details requested for all products e.g. price.    
+    If a category other than cheese,wine or deal is made available then only the core details will be displayed.    
+    These core details include loading an image which is displayed on the products and product details page.    
+    If no image is loaded a default placeholder image is displayed instead.
+
+-   There is a cancel button provided and an action button to proceed with the add, edit or delete action.
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Technologies Used
