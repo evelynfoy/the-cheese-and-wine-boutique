@@ -315,6 +315,42 @@ Product Administration
 -   There is a cancel button provided and an action button to proceed with the add, edit or delete action.
 
 
+Authentication
+
+-   If the user is not logged in then they have the option to either register or login.
+-   If the user is logged in they have the option to logout.
+
+
+Shopping Basket
+
+-   If the users virtual shopping basket is empty then this page will just display a message that the basket is empty and     
+    provide a link back to the Shop or Products page.
+
+-   If there are items in the basket then these are listed displaying the core details for the product and the quantity selected.    
+    A small image of the product is displayed.    
+    The sub-total is displayed (Quantity * Price).    
+    At this point the user can change the quantity of any item in the basket or remove it entirely.    
+    If the quanity is changed then the sub-total is recalculated and a feedback message displayed.    
+    The basket total is also displayed with the delivery charge and the grand total.    
+    These are re-calulated as item quantities change.    
+
+-   There is a button link back to the shop or product page and a button link to continue to checkout.    
+
+
+Checkout
+
+-   The checkout page provides a form for users to fill in with their details.
+-   It also contains a summary of the items in the basket which will be used to create the order.
+-   The totals for the order are displayed.
+-   A stripe card element is used on this page to collect the card details.    
+    Javascript is used to 
+    1) Mount and style the card element
+    2) Display any feedback errors received
+    3) Handle form submit
+-   There is a button provided for confirming the payment. It displays a lock icon to indicate security. 
+-   There is also a little summary message in red displayed with the total amount that will be charged to the card on confirming the payment.
+-   There is a button link provided at this point to return to the basket for making adjustments.
+
 
 
 
