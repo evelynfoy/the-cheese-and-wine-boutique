@@ -379,11 +379,14 @@ Checkout
 
 ### Libraries & Framework
 * Django
+* Stripe
+* Coudinary
 
 ### Tools
 * [Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
 * [Google Fonts](https://fonts.google.com/ "Google Fonts")
 * [Font Awesome](https://fontawesome.com/ "Font Awesome icons" )
+
 
 ## Testing
 
@@ -412,12 +415,19 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used 
 
 ## Deployment
 
+- The complete deployment details are contained [here](docs/deployment.md "deployment").   
+
 ## Credits
 
 ### Code
+* [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for code inspiration, help and advice.
+* [Stack Overflow](https://stackoverflow.com/ "Stack Overflow") for help and assistance.
+* [Code Institute](https://codeinstitute.net/ie/ "Code Institute") for help and inspiration from the run through projects. 
 
 ### Content
+[Sheridans Cheesemongers](https://sheridanscheesemongers.com/)
 
 ### Media
+*   [Sheridans Cheesemongers](https://sheridanscheesemongers.com/)    
+*   [Hero Image from alexandercho](https://img.freepik.com/free-psd/delicious-cheese-assortment-with-red-wine-mockup_176382-104.jpg?w=1480&t=st=1659894641~exp=1659895241~hmac=2daa777a05dc4086f228b30c3eb32635a86d90518bfe9f9ad745bb0a012933b2) - requested link <a href="https://www.freepik.com/psd/wine-mockup">Wine mockup psd created by alexandercho - www.freepik.com</a>    
 
-### Acknowledgements
