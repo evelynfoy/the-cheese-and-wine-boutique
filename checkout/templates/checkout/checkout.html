@@ -65,7 +65,7 @@
                     <div class="col-3">
                         <p class="my-0">€{{ total | floatformat:2 }}</p>
                         <p class="my-0">€{{ delivery | floatformat:2 }}</p>
-                        <p class="my-0"><strong>€S{{ grand_total | floatformat:2 }}</strong></p>
+                        <p class="my-0"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>
@@ -129,6 +129,14 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div id="loading-overlay">
+        <h1 class="text-light logo-font loading-spinner">
+            <span class="icon">
+                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+            </span>
+        </h1>
+    
     </div>
 
 {% endblock %}
