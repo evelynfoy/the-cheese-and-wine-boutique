@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Product, Cheese, Wine, Deal, Category
-from .forms import ProductForm, CheeseForm, WineForm
+from .forms import ProductForm, CheeseForm, WineForm, DealForm
 
 
 def all_products(request):
@@ -52,35 +52,51 @@ def product_detail(request, product_id):
 @login_required
 def add_product(request):
     """ Add product to the store """
-
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-    
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         category_id = request.POST['category']
         category = get_object_or_404(Category, pk=category_id)
-        if (form.is_valid()):
+        if form.is_valid():
             product = form.save()
-            if (category.name == 'cheese'):
+            if category.name == 'cheese':
                 cheese = Cheese(product=product)
-                cheese_form = CheeseForm(request.POST, request.FILES, instance=cheese)
-                if (cheese_form.is_valid()):
+                cheese_form = CheeseForm(request.POST, request.FILES,
+                                         instance=cheese)
+                if cheese_form.is_valid():
                     cheese_form.save()
-                messages.success(request, 'Successfully added product!')
-                return redirect(reverse('product_detail', args=[product.id]))
-            elif (category.name == 'wine'):
+                    messages.success(request, 'Successfully added product!')
+                    return redirect(reverse('product_detail',
+                                            args=[product.id]))
+                else:
+                    messages.error(request, 'Error adding product! Please check form details')
+            elif category.name == 'wine':
                 wine = Wine(product=product)
-                wine_form = WineForm(request.POST, request.FILES, instance=wine)
-                if (wine_form.is_valid()):
+                wine_form = WineForm(request.POST, request.FILES,
+                                     instance=wine)
+                if wine_form.is_valid():
                     wine_form.save()
-                messages.success(request, 'Successfully added product!')
-                return redirect(reverse('product_detail', args=[product.id]))
+                    messages.success(request, 'Successfully added product!')
+                    return redirect(reverse('product_detail', args=[product.id]))
+                else:
+                    messages.error(request, 'Error adding product! Please check form details')
+            elif category.name == 'deal':
+                deal = Deal(product=product)
+                deal_form = DealForm(request.POST, request.FILES,
+                                     instance=deal)
+                if deal_form.is_valid():
+                    deal_form.save()
+                    messages.success(request, 'Successfully added product!')
+                    return redirect(reverse('product_detail', args=[product.id]))
+                else:
+                    messages.error(request, 'Error adding product! Please check form details')
         else:
             messages.error(request,
-                           'Failed to add product. Please ensure the form is ' +
-                           'valid.')
+                           'Failed to add product. Please ensure the form ' +
+                           'is valid.')
     else:
         form = ProductForm()
         cheese_form = CheeseForm()

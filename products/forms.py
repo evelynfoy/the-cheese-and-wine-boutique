@@ -2,7 +2,7 @@
     Contains all the forms for the products application
 """
 from django import forms
-from .models import Product, Category, Cheese, Wine
+from .models import Product, Category, Cheese, Wine, Deal
 
 
 class ProductForm(forms.ModelForm):
@@ -73,5 +73,31 @@ class WineForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
 
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border=black rounded-0'
+
+
+class DealForm(forms.ModelForm):
+    """
+        This form is for the basic deal details that exist only for deal
+        products
+    """
+
+    class Meta:
+        """
+            Includes all fields on the Wine model
+        """
+        model = Deal
+        fields = ("product1", "product2")
+
+    def __init__(self, *args, **kwargs):
+        """
+            Instantiates the form and styles the text fields
+        """
+        super().__init__(*args, **kwargs)
+        products = Product.objects.all()
+
+        self.fields['product1'].choices = products
+        self.fields['product2'].choices = products
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border=black rounded-0'
