@@ -39,6 +39,15 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                <div id="wineDiv" class="mt-5 mb-5">
+                    {% for field in wine_form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
                 <div class="text-right">
                     <a class="btn btn-outline-wine rounded-0" href="{% url 'products' %}">Cancel</a>
                     <button class="btn btn-wine rounded-0" type="submit">Add</button>

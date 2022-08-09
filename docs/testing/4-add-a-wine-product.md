@@ -1,0 +1,4 @@
+- Add a test for the view add_product but for a wine product
+- Change settings to test database to test
+- Add code to add product view for wine products
+- Add Wine form

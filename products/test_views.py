@@ -167,3 +167,35 @@ class TestViews(TestCase):
                                      'age': ['4-10 weeks']
                                      })
         self.assertRedirects(response, '/products/1/')
+
+    def test_can_add_wine_product(self):
+        """
+            Tests that a wine product entry can be added using the 'product/add/ url.
+            Creates a test category with a set value of 'wine'.
+            Creates a test product.
+            Creates a user.
+            Logs on as this user.
+            Then checks that a status of 200 is received on requesting the
+            post function for the 'product/add/' url passing an object with product
+            details for the test product.
+        """
+        category = Category.objects.create(name='wine',
+                                           friendly_name='Wine')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy')
+        self.client.force_login(user=user)
+        response = self.client.post('/products/add/',
+                                    {'category': category.id,
+                                     'sku': ['1'],
+                                     'name': 'CAVANBERT',
+                                     'description': "A mild soft cheese.",
+                                     'price': [8.00],
+                                     'size': ['230G'],
+                                     'origin': 'French',
+                                     'production_method': 'Sustainable',
+                                     'grape': 'Merlot',
+                                     'wine_type': 'red',
+                                     })
+        self.assertRedirects(response, '/products/1/')
+
