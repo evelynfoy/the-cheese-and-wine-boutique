@@ -1,14 +1,27 @@
+"""
+    Contains all the forms for the products application
+"""
 from django import forms
-from .models import Product, Category, Cheese
+from .models import Product, Category, Cheese, Wine
 
 
 class ProductForm(forms.ModelForm):
-
+    """
+        This form is for the basic core details that exist for all products
+    """
     class Meta:
+        """
+            Includes all fields on the Product model
+        """
         model = Product
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
+        """
+            Instantiates the form
+            Loads the categories from the database into the dropdown and
+            styles the text fields
+        """
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
@@ -19,14 +32,46 @@ class ProductForm(forms.ModelForm):
 
 
 class CheeseForm(forms.ModelForm):
+    """
+        This form is for the cheese details that exist only for the cheese
+        products
+    """
 
     class Meta:
+        """
+            Includes all fields on the Cheese model
+        """
         model = Cheese
         fields = ("cheese_type", "milk", "region", "rennet", "maker", "age")
 
     def __init__(self, *args, **kwargs):
+        """
+            Instantiates the form and styles the text fields
+        """
         super().__init__(*args, **kwargs)
 
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border=black rounded-0'
 
+
+class WineForm(forms.ModelForm):
+    """
+        This form is for the basic wine details that exist only for wine
+        products
+    """
+
+    class Meta:
+        """
+            Includes all fields on the Wine model
+        """
+        model = Wine
+        fields = ("wine_type", "origin", "grape", "production_method")
+
+    def __init__(self, *args, **kwargs):
+        """
+            Instantiates the form and styles the text fields
+        """
+        super().__init__(*args, **kwargs)
+
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border=black rounded-0'
