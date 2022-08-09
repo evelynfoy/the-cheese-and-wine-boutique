@@ -2,3 +2,4 @@
 - Change settings to test database to test
 - Add code to add product view for wine products
 - Add Wine form
+- Restrict access to staff
