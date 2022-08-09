@@ -2,4 +2,5 @@
 - Change settings to test database to test
 - Add code to add product view for wine products
 - Add Wine form
+- Add javascript code to remove required attribute from cheese-type when adding a wine product and vice versa
 - Restrict access to staff
