@@ -101,12 +101,14 @@ def add_product(request):
         form = ProductForm()
         cheese_form = CheeseForm()
         wine_form = WineForm()
+        deal_form = DealForm()
 
     template = 'products/add_product.html'
     context = {
         'form': form,
         'cheese_form': cheese_form,
         'wine_form': wine_form,
+        'deal_form': deal_form,
     }
 
     return render(request, template, context)

@@ -3,7 +3,7 @@
 - Add code to add product view for deal products
 - Add deal form
 - Add javascript code to remove required attribute from cheese-type and wine type when adding a deal product
-- 
+- Add javascript to hide/show the deals div on selection of deal as category
 
 Issues
 - Product lists not set in form on instantiation

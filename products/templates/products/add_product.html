@@ -48,6 +48,11 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                <div id="dealDiv" class="mt-5 mb-5">
+                    {% for field in deal_form %}
+                        {{ field }}
+                    {% endfor %}
+                </div>
                 <div class="text-right">
                     <a class="btn btn-outline-wine rounded-0" href="{% url 'products' %}">Cancel</a>
                     <button class="btn btn-wine rounded-0" type="submit">Add</button>
