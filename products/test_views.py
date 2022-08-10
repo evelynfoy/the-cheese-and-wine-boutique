@@ -123,6 +123,11 @@ class TestViews(TestCase):
             Checks that a status of 200 is received on requesting this
             url.
         """
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy',
+                                        is_superuser=True)
+        self.client.force_login(user=user)
         response = self.client.get('/products/add/')
         self.assertEqual(response.status_code, 200)
 
@@ -132,26 +137,33 @@ class TestViews(TestCase):
             Checks that a status of 200 is received on requesting this
             url.
         """
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy',
+                                        is_superuser=True)
+        self.client.force_login(user=user)
         response = self.client.get('/products/add/')
         self.assertTemplateUsed(response, 'products/add_product.html')
         self.assertTemplateUsed(response, 'base.html')
 
     def test_can_add_product(self):
         """
-            Tests that an product entry can be added using the 'product/add/ url.
+            Tests that an product entry can be added using the 'product/add/
+            url.
             Creates a test category with a set value of 'cheese'.
             Creates a test product.
             Creates a user.
             Logs on as this user.
             Then checks that a status of 200 is received on requesting the
-            post function for the 'product/add/' url passing an object with product
-            details for the test product.
+            post function for the 'product/add/' url passing an object with
+            product details for the test product.
         """
         category = Category.objects.create(name='cheese',
                                            friendly_name='Cheese')
         user = User.objects.create_user(username='tom',
                                         email='tom@lyons.com',
-                                        password='tommy')
+                                        password='tommy',
+                                        is_superuser=True)
         self.client.force_login(user=user)
         response = self.client.post('/products/add/',
                                     {'category': category.id,
@@ -170,20 +182,22 @@ class TestViews(TestCase):
 
     def test_can_add_wine_product(self):
         """
-            Tests that a wine product entry can be added using the 'product/add/ url.
+            Tests that a wine product entry can be added using the
+            'product/add/ url.
             Creates a test category with a set value of 'wine'.
             Creates a test product.
             Creates a user.
             Logs on as this user.
             Then checks that a status of 200 is received on requesting the
-            post function for the 'product/add/' url passing an object with product
-            details for the test product.
+            post function for the 'product/add/' url passing an object with
+            product details for the test product.
         """
         category = Category.objects.create(name='wine',
                                            friendly_name='Wine')
         user = User.objects.create_user(username='tom',
                                         email='tom@lyons.com',
-                                        password='tommy')
+                                        password='tommy',
+                                        is_superuser=True)
         self.client.force_login(user=user)
         response = self.client.post('/products/add/',
                                     {'category': category.id,
@@ -199,3 +213,49 @@ class TestViews(TestCase):
                                      })
         self.assertRedirects(response, '/products/1/')
 
+    def test_can_add_deal_product(self):
+        """
+            Tests that a deal product entry can be added using the
+            'product/add/ url.
+            Creates three test categories for cheese, wine and deal.
+            Creates a test cheese product and a test wine product.
+            Creates a superuser.
+            Logs on as this user.
+            Then checks that a status of 200 is received on requesting the
+            post function for the 'product/add/' url passing an object with
+            product details for the test product.
+        """
+        category_cheese = Category.objects.create(name='cheese',
+                                                  friendly_name='Cheese')
+        category_wine = Category.objects.create(name='wine',
+                                                friendly_name='Wine')
+        category_deal = Category.objects.create(name='deal',
+                                                friendly_name='Deal')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy',
+                                        is_superuser=True)
+        self.client.force_login(user=user)
+        product_cheese = Product.objects.create(category=category_cheese,
+                                                sku=1,
+                                                name='MERLOT MOULIN DE GASSAC',
+                                                description="Ripe fruit",
+                                                price=15.75,
+                                                size='75cl')
+        product_wine = Product.objects.create(category=category_wine,
+                                              sku=1,
+                                              name='MERLOT MOULIN DE GASSAC',
+                                              description="Ripe fruit",
+                                              price=15.75,
+                                              size='75cl')
+        response = self.client.post('/products/add/',
+                                    {'category': category_deal.id,
+                                     'sku': ['1'],
+                                     'name': 'CAVANBERT',
+                                     'description': "A mild soft cheese.",
+                                     'price': [8.00],
+                                     'size': ['230G'],
+                                     'product1': product_cheese.id,
+                                     'product2': product_wine.id
+                                     })
+        self.assertRedirects(response, '/products/3/')
