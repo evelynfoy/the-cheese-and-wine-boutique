@@ -2,6 +2,7 @@
     Contains all the forms for the products application
 """
 from django import forms
+from django.utils.translation import gettext_lazy as _
 from .models import Product, Category, Cheese, Wine, Deal
 
 
@@ -89,6 +90,10 @@ class DealForm(forms.ModelForm):
         """
         model = Deal
         fields = ("product1", "product2")
+        labels = {
+            'product1': _('Choose first product for deal:'),
+            'product2': _('Choose second product for deal:'),
+        }
 
     def __init__(self, *args, **kwargs):
         """
@@ -96,8 +101,9 @@ class DealForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         products = Product.objects.all()
-
-        self.fields['product1'].choices = products
-        self.fields['product2'].choices = products
+        product_names = [(p.id, p.name) for p in products]
+        self.fields['product1'].choices = product_names
+        self.fields['product2'].choices = product_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border=black rounded-0'
+
