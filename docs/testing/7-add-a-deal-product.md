@@ -19,7 +19,7 @@ Process
 Issue Solution
 -  Products1 and 2 appearing with no labels 
 -   fields in this form were not defined as crispy
-![Before Fix](/docs/testing/DealIssueBefore.jpg "Before Fix").
-![Fix](/docs/testing/DealIssueFix.jpg "Fix").
-![After Fix](/docs/testing/DealIssueAfter.jpg "After Fix").
+![Before Fix](/docs/testing/DealIssue2Before.jpg "Before Fix").
+![Fix](/docs/testing/DealIssue2Fix.jpg "Fix").
+![After Fix](/docs/testing/DealIssue2After.jpg "After Fix").
 
