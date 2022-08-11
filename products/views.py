@@ -102,6 +102,7 @@ def add_product(request):
         cheese_form = CheeseForm()
         wine_form = WineForm()
         deal_form = DealForm()
+        print(request.method)
 
     template = 'products/add_product.html'
     context = {
@@ -111,4 +112,40 @@ def add_product(request):
         'deal_form': deal_form,
     }
 
+    return render(request, template, context)
+
+
+@login_required
+def edit_product(request, product_id):
+    """ Edit product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    if product.category.name == 'cheese':
+        cheese = get_object_or_404(Cheese, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if product.category.name == 'cheese':
+            cheese_form = CheeseForm(request.POST, request.FILES, instance=cheese)
+        if form.is_valid() and cheese_form.is_valid():
+            form.save()
+            cheese_form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=product)
+        cheese_form = CheeseForm(instance=cheese)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
+        'cheese_form': cheese_form,
+    }
     return render(request, template, context)

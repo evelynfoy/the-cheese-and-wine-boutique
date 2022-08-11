@@ -51,7 +51,13 @@
                     {% elif product.category.name == "deal" %}
                         {% include "components/deal_detail.html" %}
                     {% endif %}
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3 mb-3">
+                        <a href="{% url 'edit_product' product.id %}">Edit</a> 
+                    </small>
+                {% endif %}
                 </div>
+                
                 <!-- Add to basket button --> 
                 <div class="col-12">
                     {% include "components/add_to_basket.html" %}
