@@ -35,6 +35,11 @@
                         {{ field | as_crispy_field }}
                     {% endfor %}
                 </div>
+                <div id="wineDiv" class="mt-5 mb-5">
+                    {% for field in wine_form %}
+                        {{ field | as_crispy_field }}
+                    {% endfor %}
+                </div>
                 
                 <div class="text-right">
                     <a class="btn btn-outline-wine rounded-0" href="{% url 'products' %}">Cancel</a>

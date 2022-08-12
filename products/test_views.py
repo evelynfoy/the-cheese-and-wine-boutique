@@ -272,7 +272,7 @@ class TestViews(TestCase):
             post function for the 'product/edit/' url passing an object with
             product details for the test product.
             Then checks that a status of 200 is received on requesting this
-            url passing the slug of the test animal.
+            url passing the product id of the test product.
         """
         category_cheese = Category.objects.create(name='cheese',
                                                   friendly_name='Cheese')
@@ -333,18 +333,17 @@ class TestViews(TestCase):
         """
             Tests that an product entry can be edited using the 'product/edit/'
             url.
-            Creates a test animal type with a set value of 'Cat'.
-            Creates a test animal.
-            Creates a test user.
+            Creates a test category with a set value of 'Cheese'.
             Creates a test product.
+            Creates a test user.
             Logs on as this user.
-            Then it requests the 'product/edit/' url passing in the slug for the
-            test product and an object containing test change details (pitch=
-            'changed').
+            Then it requests the 'product/edit/' url passing in the id for the
+            test product and an object containing test change details (description=
+            'A mild soft cheese.').
             Then it checks that the response is redirection to the 'products/'
             url.
             Then the test product is retrieved from the database and tested to
-            see if the value for pitch is in fact now equal to 'changed'.
+            see if the value for description is in fact now equal to ''A mild soft cheese.'.
         """
         category = Category.objects.create(name='cheese',
                                            friendly_name='Cheese')
@@ -365,7 +364,7 @@ class TestViews(TestCase):
                                         password='tommy',
                                         is_superuser=True)
         self.client.force_login(user=user)
-        response = self.client.post(f'/products/edit/{product.id}',
+        response = self.client.post(f'/products/edit/{product.id}/',
                                     {'category': category.id,
                                      'sku': ['1'],
                                      'name': 'CAVANBERT',
@@ -378,7 +377,6 @@ class TestViews(TestCase):
                                      'cheese_type': ['soft'],
                                      'age': ['4-10 weeks'],
                                      })
-        print(response)
         self.assertRedirects(response, '/products/1/')
         updated_product = Product.objects.get(sku=product.sku)
         self.assertEqual(updated_product.description, 'A mild soft cheese.')
