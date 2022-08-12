@@ -259,3 +259,126 @@ class TestViews(TestCase):
                                      'product2': product_wine.id
                                      })
         self.assertRedirects(response, '/products/3/')
+
+
+    def test_product_edit(self):
+        """
+            Tests rendering of 'products/edit' url.
+            Creates a test category with a set value of 'cheese'.
+            Creates a test product.
+            Creates a superuser.
+            Logs on as this user.
+            Then checks that a status of 200 is received on requesting the
+            post function for the 'product/edit/' url passing an object with
+            product details for the test product.
+            Then checks that a status of 200 is received on requesting this
+            url passing the slug of the test animal.
+        """
+        category_cheese = Category.objects.create(name='cheese',
+                                                  friendly_name='Cheese')
+        product = Product.objects.create(category=category_cheese,
+                                         sku=1,
+                                         name='Test Cheese',
+                                         description="Cheesy",
+                                         price=5.75,
+                                         size='250g')
+        cheese = Cheese.objects.create(product=product,
+                                       milk='cow',
+                                       region='Ireland',
+                                       rennet='vegetarian',
+                                       cheese_type='soft',
+                                       age='4-10 weeks')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy',
+                                        is_superuser=True)
+        self.client.force_login(user=user)
+        response = self.client.get(f'/products/edit/{product.id}/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_product_edit_template(self):
+        """
+            Tests templates rendered for '/edit/<int:product_id>' url.
+            Creates a test category with a set value of 'cheese'.
+            Creates a test product.
+            Creates a superuser.
+            Logs on as this user.
+            Then checks the templates used on requesting this
+            url passing the product.id of the product.
+        """
+        category_cheese = Category.objects.create(name='cheese',
+                                                  friendly_name='Cheese')
+        product_cheese = Product.objects.create(category=category_cheese,
+                                                sku=1,
+                                                name='Test Cheese',
+                                                description="Cheesy",
+                                                price=5.75,
+                                                size='250g')
+        cheese = Cheese.objects.create(product=product_cheese,
+                                       milk='cow',
+                                       region='Ireland',
+                                       rennet='vegetarian',
+                                       cheese_type='soft',
+                                       age='4-10 weeks')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy',
+                                        is_superuser=True)
+        self.client.force_login(user=user)
+        response = self.client.get('/products/edit/1/')
+        self.assertTemplateUsed(response, 'products/edit_product.html')
+        self.assertTemplateUsed(response, 'base.html')
+
+    def test_can_edit_product(self):
+        """
+            Tests that an product entry can be edited using the 'product/edit/'
+            url.
+            Creates a test animal type with a set value of 'Cat'.
+            Creates a test animal.
+            Creates a test user.
+            Creates a test product.
+            Logs on as this user.
+            Then it requests the 'product/edit/' url passing in the slug for the
+            test product and an object containing test change details (pitch=
+            'changed').
+            Then it checks that the response is redirection to the 'products/'
+            url.
+            Then the test product is retrieved from the database and tested to
+            see if the value for pitch is in fact now equal to 'changed'.
+        """
+        category = Category.objects.create(name='cheese',
+                                           friendly_name='Cheese')
+        product = Product.objects.create(category=category,
+                                         sku=1,
+                                         name='Test Cheese',
+                                         description="Cheesy",
+                                         price=5.75,
+                                         size='250g')
+        cheese = Cheese.objects.create(product=product,
+                                       milk='cow',
+                                       region='Ireland',
+                                       rennet='vegetarian',
+                                       cheese_type='soft',
+                                       age='4-10 weeks')
+        user = User.objects.create_user(username='tom',
+                                        email='tom@lyons.com',
+                                        password='tommy',
+                                        is_superuser=True)
+        self.client.force_login(user=user)
+        response = self.client.post(f'/products/edit/{product.id}',
+                                    {'category': category.id,
+                                     'sku': ['1'],
+                                     'name': 'CAVANBERT',
+                                     'description': "A mild soft cheese.",
+                                     'price': [8.00],
+                                     'size': ['230G'],
+                                     'milk': ['cow'],
+                                     'region': ['Ireland'],
+                                     'rennet': ['vegetarian'],
+                                     'cheese_type': ['soft'],
+                                     'age': ['4-10 weeks'],
+                                     })
+        print(response)
+        self.assertRedirects(response, '/products/1/')
+        updated_product = Product.objects.get(sku=product.sku)
+        self.assertEqual(updated_product.description, 'A mild soft cheese.')

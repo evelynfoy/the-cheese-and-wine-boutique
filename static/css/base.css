@@ -240,6 +240,12 @@ a.remove-item:hover {
     font-size: 1.6rem;
 }
 
+a.text-wine:focus, 
+a.text-wine:hover {
+    color:var(--grey)!important;
+}
+
+
 .quantity-label {
     margin-top:.4rem;
 }
