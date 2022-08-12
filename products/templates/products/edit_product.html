@@ -10,14 +10,13 @@
 {%  endblock %}
 
 {% block content %}
-<div class="overlay"></div>
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6">
-            <hr>
+            <hr class="wine-border-color">
             <h2 class="logo-font mb-4">Product Management</h2>
             <h5 class="text-muted">Edit a Product</h5>
-            <hr>
+            <hr class="wine-border-color">
         </div>
     </div>
     <div class="row">
@@ -38,8 +37,8 @@
                 </div>
                 
                 <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Update Product</button>
+                    <a class="btn btn-outline-wine rounded-0" href="{% url 'products' %}">Cancel</a>
+                    <button class="btn btn-wine rounded-0" type="submit">Update Product</button>
                 </div>
             </form>
         </div>
