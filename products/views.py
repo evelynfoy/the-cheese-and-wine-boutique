@@ -102,7 +102,6 @@ def add_product(request):
         cheese_form = CheeseForm()
         wine_form = WineForm()
         deal_form = DealForm()
-        print(request.method)
 
     template = 'products/add_product.html'
     context = {
