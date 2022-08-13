@@ -1,0 +1,9 @@
+Plan
+1) Add a profiles app
+2) Add a model for User Profile
+3) Create url patterns for both viewing the profile and viewing the order history
+4) Create views for viewing the profile and viewing the order history
+5) Add a form for the user profile details
+6) Add a template for the profile details
+
+
