@@ -27,6 +27,7 @@ function categoryChanged() {
 $(document).ready(function() {
     
     var cat = $('#id_category').val();
+    console.log(cat)
     if (cat == 1) {
         $('#cheeseDiv').show();
         $('#wineDiv').hide();
@@ -51,3 +52,4 @@ $(document).ready(function() {
 });
 
 $('#id_category').change(categoryChanged);
+console.log('Hi')

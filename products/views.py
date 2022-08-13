@@ -72,7 +72,9 @@ def add_product(request):
                     return redirect(reverse('product_detail',
                                             args=[product.id]))
                 else:
-                    messages.error(request, 'Error adding product! Please check form details')
+                    messages.error(request,
+                                   'Error adding product! ' +
+                                   'Please check form details')
             elif category.name == 'wine':
                 wine = Wine(product=product)
                 wine_form = WineForm(request.POST, request.FILES,
@@ -80,9 +82,12 @@ def add_product(request):
                 if wine_form.is_valid():
                     wine_form.save()
                     messages.success(request, 'Successfully added product!')
-                    return redirect(reverse('product_detail', args=[product.id]))
+                    return redirect(reverse('product_detail',
+                                            args=[product.id]))
                 else:
-                    messages.error(request, 'Error adding product! Please check form details')
+                    messages.error(request,
+                                   'Error adding product!' +
+                                   'Please check form details')
             elif category.name == 'deal':
                 deal = Deal(product=product)
                 deal_form = DealForm(request.POST, request.FILES,
@@ -90,9 +95,16 @@ def add_product(request):
                 if deal_form.is_valid():
                     deal_form.save()
                     messages.success(request, 'Successfully added product!')
-                    return redirect(reverse('product_detail', args=[product.id]))
+                    return redirect(reverse('product_detail',
+                                            args=[product.id]))
                 else:
-                    messages.error(request, 'Error adding product! Please check form details')
+                    messages.error(request,
+                                   'Error adding product!' +
+                                   'Please check form details')
+            else:
+                messages.success(request, 'Successfully added product!')
+                return redirect(reverse('product_detail',
+                                        args=[product.id]))
         else:
             messages.error(request,
                            'Failed to add product. Please ensure the form ' +
@@ -116,7 +128,13 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit product """
+    """ 
+        Allows the store owner to edit product details.
+        Only the relevant details are displayed for the product and category
+        If entered details are valid the form is saved and a success message displayed
+        and the user is returned to the product details page for the product
+        otherwise an error message is displayed
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -128,37 +146,71 @@ def edit_product(request, product_id):
         if form.is_valid():
             if product.category.name == 'cheese':
                 cheese = get_object_or_404(Cheese, pk=product_id)
-                cheese_form = CheeseForm(request.POST, request.FILES, instance=cheese)
+                cheese_form = CheeseForm(request.POST, request.FILES,
+                                         instance=cheese)
                 if cheese_form.is_valid():
                     form.save()
                     cheese_form.save()
                     messages.success(request, 'Successfully updated product!')
-                    return redirect(reverse('product_detail', args=[product.id]))
+                    return redirect(reverse('product_detail',
+                                            args=[product.id]))
                 else:
-                    messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+                    message1 = 'Failed to update product.'
+                    message2 = 'Please ensure the form is valid.'
+                    messages.error(request, message1 + message2)
 
-            if product.category.name == 'wine':
+            elif product.category.name == 'wine':
                 wine = get_object_or_404(Wine, pk=product_id)
-                wine_form = WineForm(request.POST, request.FILES, instance=wine)
+                wine_form = WineForm(request.POST, request.FILES,
+                                     instance=wine)
                 if wine_form.is_valid():
                     form.save()
                     wine_form.save()
                     messages.success(request, 'Successfully updated product!')
-                    return redirect(reverse('product_detail', args=[product.id]))
+                    return redirect(reverse('product_detail',
+                                    args=[product.id]))
                 else:
-                    messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+                    messages.error(request, 'Failed to update product. ' +
+                                   'Please ensure the form is valid.')
+
+            elif product.category.name == 'deal':
+                deal = get_object_or_404(Deal, pk=product_id)
+                deal_form = DealForm(request.POST, request.FILES,
+                                     instance=deal)
+                if deal_form.is_valid():
+                    form.save()
+                    deal_form.save()
+                    messages.success(request, 'Successfully updated product!')
+                    return redirect(reverse('product_detail',
+                                            args=[product.id]))
+                else:
+                    messages.error(request, 'Failed to update product.' +
+                                   'Please ensure the form is valid.')
+            else:
+                form.save()
+                messages.success(request, 'Successfully updated product!')
+                return redirect(reverse('product_detail',
+                                        args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update product. Please ensure' +
+                           'the form is valid.')
     else:
         form = ProductForm(instance=product)
         if product.category.name == 'cheese':
             cheese = get_object_or_404(Cheese, pk=product_id)
             cheese_form = CheeseForm(instance=cheese)
             wine_form = WineForm()
-        else:
+            deal_form = DealForm()
+        elif product.category.name == 'wine':
             wine = get_object_or_404(Wine, pk=product_id)
             wine_form = WineForm(instance=wine)
             cheese_form = CheeseForm()
+            deal_form = DealForm()
+        else:
+            deal = get_object_or_404(Deal, pk=product_id)
+            deal_form = DealForm(instance=deal)
+            cheese_form = CheeseForm()
+            wine_form = WineForm()
         messages.info(request, f'You are editing {product.name}')
 
     template = 'products/edit_product.html'
@@ -167,5 +219,6 @@ def edit_product(request, product_id):
         'product': product,
         'cheese_form': cheese_form,
         'wine_form': wine_form,
+        'deal_form': deal_form,
     }
     return render(request, template, context)
