@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.db.models.functions import Lower
 from .models import Product, Cheese, Wine, Deal, Category
 from .forms import ProductForm, CheeseForm, WineForm, DealForm
 
@@ -35,7 +36,6 @@ def all_products(request):
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            print(categories)
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
@@ -52,6 +52,8 @@ def all_products(request):
 
     context = {
         'products': products,
+        'search_term': query,
+        'current_categories': categories,
         'current_sorting': current_sorting,
     }
 
