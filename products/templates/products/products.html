@@ -19,9 +19,20 @@
             
         </div>
         <div class="row mt-1 mb-2">
+            
+            <div class="dropdown col text-center mt-3">
+                <button class="btn btn-wine dropdown-toggle" type="button" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Order by:
+                </button>
+                <div class="dropdown-menu" aria-labelledby="all-products-link">
+                    <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                    <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                    <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                </div>
+            </div>
             <div class="dropdown col text-center mt-3">
                 <button class="btn btn-wine dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Categories
+                  Filter By Category:
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="{% url 'products' %}?category=cheese">Cheese</a>
