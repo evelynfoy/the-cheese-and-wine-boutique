@@ -16,6 +16,7 @@
             <hr class="wine-border-color">
             <h2 class="logo-font mb-4">Product Management</h2>
             <h5 class="text-muted">Edit a Product</h5>
+            <p class="mb-0 wine-bg-color text-white pl-3">{{ product.category.friendly_name }}</p>
             <hr class="wine-border-color">
         </div>
     </div>
@@ -24,7 +25,7 @@
             <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                    {% if field.name != 'image' %}
+                    {% if field.name != 'image'%}
                         {{ field | as_crispy_field }}
                     {% else %}
                         {{ field }}
@@ -40,7 +41,11 @@
                         {{ field | as_crispy_field }}
                     {% endfor %}
                 </div>
-                
+                <div id="dealDiv" class="mt-5 mb-5">
+                    {% for field in deal_form %}
+                        {{ field | as_crispy_field }}
+                    {% endfor %}
+                </div>
                 <div class="text-right">
                     <a class="btn btn-outline-wine rounded-0" href="{% url 'products' %}">Cancel</a>
                     <button class="btn btn-wine rounded-0" type="submit">Update Product</button>
@@ -62,7 +67,7 @@
         })
     </script>
 
-    <script src="{% static 'products/js/products.js' %}"></script>
+    <script src="{% static 'products/js/products-edit.js' %}"></script>
     
 {% endblock %}
 
