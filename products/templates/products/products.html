@@ -14,19 +14,49 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <h1 class="logo-font">Products</h1>
+                {% for c in current_categories %}
+                    <a class="btn-outline-wine text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 ">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
+                <div class="row mt-1 mb-2">
+
+                    <div class="dropdown col text-center mt-3">
+                        <button class="btn btn-wine dropdown-toggle" type="button" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Order by:
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="all-products-link">
+                            <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                            <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                            <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                        </div>
+                    </div>
+                    <div class="dropdown col text-center mt-3">
+                        <button class="btn btn-wine dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter By Category:
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{% url 'products' %}?category=cheese">Cheese</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?category=wine">Wine</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?category=deal">Deals</a>
+                        </div>
+                    </div>
+                </div>
                 <hr class="wine-border-color">
             </div>
             
         </div>
-        <div class="row mt-1 mb-2">
-            <div class="dropdown col text-center mt-3">
-                <button class="btn btn-wine dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Categories
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{% url 'products' %}?category=cheese">Cheese</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=wine">Wine</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=deal">Deals</a>
+        <div class="row mt-1 mb-2 ">
+            
+            <div class="col-12 col-md-6 offset-md-2 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                <div class="sort-select-wrapper w-50 ">
+                    <select id="sort-selector" class="custom-select small-font wine-border-color custom-select-sm rounded-0">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort within category...</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -85,4 +115,36 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+    </script>
+
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentURL = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if (selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentURL.searchParams.set("sort", sort);
+                currentURL.searchParams.set("direction", direction);
+                console.log(currentURL)
+                window.location.replace(currentURL)
+            } else {
+                currentURL.searchParams.delete("sort");
+                currentURL.searchParams.delete("direction");
+
+                window.location.replace(currentURL);
+            }
+        })
+    </script>
 {% endblock %}
