@@ -222,3 +222,25 @@ def edit_product(request, product_id):
         'deal_form': deal_form,
     }
     return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+    """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
+    product = get_object_or_404(Product, pk=product_id)
+    if product.category.name == 'cheese':
+        cheese = get_object_or_404(Cheese, pk=product_id)
+        cheese.delete()
+    elif product.category.name == 'wine':
+        wine = get_object_or_404(Wine, pk=product_id)
+        wine.delete()
+    elif product.category.name == 'deal':
+        deal = get_object_or_404(Deal, pk=product_id)
+        deal.delete()
+    product.delete()
+    messages.success(request, f'Product {product.name} deleted!')
+    return redirect(reverse('products'))
