@@ -1,0 +1,9 @@
+Plan
+1) Add a url pattern
+2) Add a link to product detail page
+3) Add a view which deletes the product and displays a message
+
+Issues
+1) Not displaying product name when deleting
+2) Need to check what happens if removed product in a users basket
+3) Confirmation screen?
