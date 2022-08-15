@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /basket/
+Sitemap: https://the-cheese-and-wine-boutique/sitemap.xml
