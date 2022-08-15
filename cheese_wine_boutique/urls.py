@@ -1,6 +1,7 @@
 ''' urls for the Cheese and Wine application '''
 from django.contrib import admin
 from django.urls import path, include
+from .views import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,3 +12,5 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
 ]
+
+handler404 = 'cheese_wine_boutique.views.handler404'
