@@ -15,7 +15,6 @@
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
-                    
                 </div>
 
                 <!-- Search -->
@@ -34,7 +33,7 @@
                     </form>
                 </div>
 
-                <!-- Nav bar 3 -->
+                <!-- Nav bar -->
                 <div class="col-lg-2">
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
@@ -53,7 +52,7 @@
                     </div>
                 </div>
 
-                <!-- Shopping basket 5 -->
+                <!-- Shopping basket -->
                 <div class="col-5 col-md-3 col-lg-1 pr-0">
                     <a class="{% if grand_total %}text-primary {% else %}text-wine{% endif %} nav-link d-block" href="{% url 'view_basket' %}">
                         <div>
@@ -69,18 +68,17 @@
                     </a>
                 </div>
 
-                <!-- Search Mobile 6 -->
-                <div class="col-3 d-lg-none">
+                <!-- Search Mobile -->
+                <li class="list-inline-item d-lg-none">
                     <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
                             <div><i class="fas fa-search fa-lg"></i></div>
-                            <!-- <p class="my-0">Search</p> -->
                         </div>
                     </a>
-                    <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+                    <div class="dropdown-menu border-0 p-3 rounded-0 my-0 search-drop-down" aria-labelledby="mobile-search">
                         <form class="form" method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100">
-                                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
                                 <div class="input-group-append">
                                     <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
                                         <span class="icon">
@@ -91,9 +89,9 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </li>
 
-                <!-- User Profile 7 -->
+                <!-- User Profile -->
                 <div class="col-2 col-lg-1 ">
                     <ul class="list-inline list-unstyled text-center text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">

@@ -144,6 +144,11 @@ a.category-badge > span.badge:hover {
     font-size: 1.5rem;
 }
 
+.search-drop-down {
+    right:0px!important;
+    width:100%;
+}
+
 .header-container {
     padding-top: 7rem;
     font-size: 1.5rem;
