@@ -165,8 +165,8 @@ a.category-badge > span.badge:hover {
 
 .message-container {
     position: fixed;
-    top: 72px;
-    right: 75px;
+    top: 120px;
+    right:25%;
     z-index: 999999999999;
 }
 
@@ -177,18 +177,6 @@ a.category-badge > span.badge:hover {
 
 .toast-capper {
     height: 2px;
-}
-
-/* from CSS-tricks.com https://css-tricks.com/snippets/css/css-triangle/ */
-.arrow-up {
-    width: 0; 
-    height: 0; 
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
 }
 
 /* Convenience classes - colors copied from Bootstrap */
@@ -285,6 +273,25 @@ a.text-wine:hover {
 
 }
 
+@media screen and (min-width: 768px) {
+    .toggler-margin {
+        margin-left: 10rem;
+    }
+
+    .small-image {
+        width: 10rem;
+    }
+
+    .font-large {
+        font-size: 2.5rem;
+    }
+
+    .message-container {
+        top: 90px;
+        right: 0px;
+        left:25px;
+    }
+}
 @media screen and (min-width: 992px) {
 
     .social-media {
@@ -300,21 +307,25 @@ a.text-wine:hover {
         right: -12px;
     
     }
+
+    .message-container {
+        top: 80px;
+        right: 0px;
+        left:640px;
+    }
+
 }
 
-@media screen and (min-width: 768px) {
-    .toggler-margin {
-        margin-left: 10rem;
+@media screen and (min-width: 1200px) {
+
+    .message-container {
+        top: 70px;
+        right: 0px;
+        left: 860px;
     }
 
-    .small-image {
-        width: 10rem;
-    }
-
-    .font-large {
-        font-size: 2.5rem;
-    }
 }
+
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
