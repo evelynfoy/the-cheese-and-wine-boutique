@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda+One&Open+Sans&display=swap');
+
 :root {
     --wine: #9B2242;
     --cream: #fff4b9;
@@ -142,6 +144,11 @@ a.category-badge > span.badge:hover {
     font-size: 1.5rem;
 }
 
+.search-drop-down {
+    right:0px!important;
+    width:100%;
+}
+
 .header-container {
     padding-top: 7rem;
     font-size: 1.5rem;
@@ -265,7 +272,7 @@ a.text-wine:hover {
 
 .dropdown-menu {
     font-size: 1.6rem;
-    /* right: -70px; */
+    right: -45px;
     background-color: var(--wine);
     left:auto;
     margin-top:0;
@@ -278,7 +285,7 @@ a.text-wine:hover {
 
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
 
     .social-media {
         font-size: 2rem;
