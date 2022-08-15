@@ -267,7 +267,7 @@ a.text-wine:hover {
 
 .dropdown-menu {
     font-size: 1.6rem;
-    /* right: -70px; */
+    right: -45px;
     background-color: var(--wine);
     left:auto;
     margin-top:0;
@@ -280,7 +280,7 @@ a.text-wine:hover {
 
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
 
     .social-media {
         font-size: 2rem;
