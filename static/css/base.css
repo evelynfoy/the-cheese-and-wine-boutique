@@ -122,14 +122,6 @@ a.category-badge > span.badge:hover {
     border-color: var(--cream);
 }
 
-/* https://www.geeksforgeeks.org/how-to-change-hamburger-toggler-color-in-bootstrap/ */
-/* Setting the stroke to green using rgb values (0, 128, 0) */
-
-/* .cream-custom-toggler .navbar-toggler-icon {
-    background-image: url(
-"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 244, 185, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}  */
-
 .nav-bar-margin {
     margin-top: 7rem;
 }
@@ -258,11 +250,18 @@ a.text-wine:hover {
     font-size: 3rem;
 }
 
-.dropdown-menu {
+.dropdown-menu-user {
     font-size: 1.6rem;
-    right: -45px;
+    left: -130px!important;
     background-color: var(--wine);
-    left:auto;
+    margin-top:0;
+    right: -40px;
+
+}
+
+.dropdown-menu-search {
+    font-size: 1.6rem;
+    background-color: var(--wine);
     margin-top:0;
 
 }
@@ -271,6 +270,10 @@ a.text-wine:hover {
     
     color: var(--white)
 
+}
+
+.custom-toggler-margin {
+    margin-right: 2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -290,6 +293,14 @@ a.text-wine:hover {
         top: 90px;
         right: 0px;
         left:25px;
+    }
+
+    .dropdown-menu-user {
+        font-size: 1.6rem;
+        left: -90px!important;
+        background-color: var(--wine);
+        margin-top:0;
+        right: -45px;
     }
 }
 @media screen and (min-width: 992px) {
@@ -314,6 +325,18 @@ a.text-wine:hover {
         left:640px;
     }
 
+    .dropdown-menu-user {
+        font-size: 1.6rem;
+        left: -120px!important;
+        background-color: var(--wine);
+        right: -25px;
+        top: 45px;
+        margin-top:0;
+    }
+
+    .logo-font {
+        font-size: 1.9rem ;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -324,6 +347,18 @@ a.text-wine:hover {
         left: 860px;
     }
 
+    .dropdown-menu-user {
+        font-size: 1.8rem;
+        left: -130px!important;
+        background-color: var(--wine);
+        right: -40px;
+        top: 45px;
+        margin-top:0;
+    }
+
+    .logo-font {
+        font-size: 2.5rem ;
+    }
 }
 
 
