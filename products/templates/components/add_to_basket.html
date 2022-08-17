@@ -1,25 +1,23 @@
 
 <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
     {% csrf_token %}
-    <div class="form-row " >
-        <div class="row">
-            <div class="col-2 offset-1">
-                <div class="form-group w-50">
-                    <div class="input-group">
-                        <strong>
-                            <input class="form-control qty_input" type="number" 
-                            name="quantity" value="1" min="1" max="99" 
-                            id="add_qty">
-                        </strong>
-                    </div>
+    <div class="form-row ">
+        <div class="col-3 offset-1">
+            <div class="form-group w-50">
+                <div class="input-group">
+                    <strong>
+                        <input class="form-control qty_input" type="number" 
+                        name="quantity" value="1" min="1" max="99" 
+                        id="add_qty">
+                    </strong>
                 </div>
             </div>
+        </div>
 
-            <div class="col-4">
-                <input type="submit" class="btn btn-wine rounded-0 small-font" value="Add to basket">
-            </div>
+        <div class="col-8">
+            <input type="submit" class="btn btn-wine rounded-0 small-font" value="Add to basket">
+        </div>
         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-    </div>
     </div>
 </form>
 
