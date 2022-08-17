@@ -155,6 +155,10 @@ a.category-badge > span.badge:hover {
     width: 600px;
 }
 
+#mc-embedded-subscribe {
+    background-color: var(--wine)!important;
+}
+
 .message-container {
     position: fixed;
     top: 120px;
