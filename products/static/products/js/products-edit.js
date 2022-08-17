@@ -28,4 +28,3 @@ $(document).ready(function() {
     $('#div_id_category').hide();
     
 });
-
