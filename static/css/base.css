@@ -204,7 +204,7 @@ a.category-badge > span.badge:hover {
     border-bottom-color: #343a40 !important;
 }
 
-.bag-notification-wrapper {
+.basket-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -264,6 +264,14 @@ a.text-wine:hover {
     background-color: var(--wine);
     margin-top:0;
 
+}
+
+.dropdown-menu {
+    font-size: 1.6rem;
+    right: -45px;
+    background-color: var(--wine);
+    left:auto;
+    margin-top:0;
 }
 
 .dropdown-item {
@@ -422,6 +430,5 @@ a.text-wine:hover {
 .btn-outline-wine {
     background: white;
     color: var(--wine) !important;
-    /* use important to overrode link colours for <a> elements */
     border: 1px solid var(--wine);
 }
