@@ -407,7 +407,7 @@ a.text-wine:hover {
     background-color: var(--wine);
     border: 1px solid var(--wine);
     padding: .375rem .75rem;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     line-height: 1.5;
     border-radius: 0;
 
