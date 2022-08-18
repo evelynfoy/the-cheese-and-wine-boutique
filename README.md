@@ -510,16 +510,32 @@ The User options, search and basket total move to the next line.
 
 #### HTML Validator
 The W3C Markup Validator was used to validate every page of the project to ensure there were no syntax errors in the project.
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-cheese-and-wine-boutique.herokuapp.com%2F)
+  - See [Results](docs/images/testing/html-validation-results.png)
 
 #### CSS Validator (Jigsaw)
-The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate every page of the project to ensure there were no syntax errors in the project.
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthe-cheese-and-wine-boutique.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - See [Results](docs/images/testing/css-validation-results.png)
+
 
 #### Javascript (jshint)
+| Name                 | image | Result |
+|----------------------|-------|--------|
+| countryfield.js       | [Results](docs/testing/jshint/country-field.png)     | Recommended using esversion 6
+| stripe_elements.js    |  [Results](docs/testing/jshint/stripe-elements.png)  | Recommended using esversion 6   
+| products.js           |  [Results](docs/testing/jshint/products.png)         | Had 2 missing semi-colons - corrected   
+| products-edit.js      |  [Results](docs/testing/jshint/products-edit.png)    | No errors   
 
 #### Python (Pep8)
 
-#### Lighthouse 
 
+#### Lighthouse 
+- Accessibility score 98 
+    - search and user profile links do not have discernable name
+    - this could probably be resolved using aria-labelling but I did not have time prior to submission
+- SEO score 100
+- Best Practises score 83 is a bit low as it seems to have some issues with jquery vulnerabilities which I will investigate further.
+- See [Results](docs/testing/lighthouse.png)
 <br>
 
 ### Automated Tests
