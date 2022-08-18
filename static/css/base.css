@@ -162,7 +162,6 @@ a.category-badge > span.badge:hover {
 .message-container {
     position: fixed;
     top: 120px;
-    right:25%;
     z-index: 999999999999;
 }
 
@@ -331,7 +330,7 @@ a.text-wine:hover {
     .header-container {
         padding-top: 6rem;
     }
-    
+
     .navbar-text {
         padding-left: 2rem;
     }
