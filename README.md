@@ -548,10 +548,6 @@ Results from http://pep8online.com/
 In most cases I split lines that were too long but a few were more awkward to split so I left them alone rather than risking breaking the application.    
 This is something I would sort out with more time.
 
-
-    
-
-
 #### Lighthouse 
 - Accessibility score 98 
     - search and user profile links do not have discernable name
@@ -566,7 +562,11 @@ This is something I would sort out with more time.
 
 ### Testing User Stories from User Experience (UX) Section
 
+See [User Stories Testing](docs/testing/user-story-testing.md)
+
 ### Manual Tests
+
+See [Additional Issue or Bug Testing](docs/testing/additional-bug-testing.md)
 
 ## Deployment
 
