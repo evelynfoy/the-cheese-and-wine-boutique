@@ -276,6 +276,15 @@ The user options are represented by a font awesome icon which on click displays 
 The navigation bar is fully responsive and the links are replaced on smaller screens with a hamburger icon.    
 The User options, search and basket total move to the next line.
 
+### Search box
+-   The search box beside the logo alows searching of the products name and description for a keyword.    
+-   This drops to the second line on smaller screens so it is always easily accessible.
+-   This example shows the results of the search for the cheese keyword. The wine is shown also because it has the word cheese in its description.
+
+![search](docs/images/cheese-search1.png)
+![search](docs/images/cheese-search2.png)
+
+
 ### Hero Image
 
 ![hero-image](docs/images/hero-image.png)
@@ -317,6 +326,14 @@ The User options, search and basket total move to the next line.
 ![shop](docs/images/shop-tablet.png)
 ![shop](docs/images/shop-phone.png)
 
+-   This page also has a filter and sort feature which allows users to display the products in a certain category only
+    e.g. cheese  or to sort them in a particular order
+-   The `Sort within Category` dropdown provides the users with the ability to sort within category e.g. sort cheeses by desc price.
+-   Selecting the `Order by dropdown` of `All Products` clears the filter.
+
+![sorting](docs/images/filter-and-sort.png)
+
+
 ### Product Details
 
 -   Clicking on a product displays the full details for that item.
@@ -328,7 +345,6 @@ The User options, search and basket total move to the next line.
 -   It also summarises the contents of the basket and shows the total excluding delivery.    
 -   There is also a button to go to checkout. A secure payment facilitiy is indicated by displaying a lock item on the button.
 -   The message can be dismisses by clicking the x but it also disappears by itself after a few seconds.
--   This page also has an edit and delete link for staff only (superusers) from which they can edit and delete products.
 
 ![details](docs/images/details-cheese-tablet.png)
 ![details](docs/images/details-cheese-phone.png)
@@ -364,6 +380,15 @@ The User options, search and basket total move to the next line.
 ![admin](docs/images/cheese-administration-phone.png)
 ![admin](docs/images/deal-administration.png)
 ![admin](docs/images/deal-administration-phone.png)
+
+
+-   The product details page also has an edit and delete link for staff only (superusers) from which they can edit and delete products.
+-   Feedback messages are sent on completion of actions
+
+![edit](docs/images/edit-wine1.png)
+![edit](docs/images/edit-wine2.png)
+![edit](docs/images/edit-wine3.png)
+![details](docs/images/product-delete.png)
 
 ### Authentication
 
@@ -414,12 +439,40 @@ The User options, search and basket total move to the next line.
    ![checkout](docs/images/checkout-phone-loggedout.png)
    ![checkout](docs/images/checkout-loggedin.png)
 
+-   If the card details are incorrect an error message is displayed    
+   ![checkout](docs/images/card-error.png)
+
+-   If the details are correct a spinner is displayed while the order is being processed.
+   ![checkout](docs/images/loading-spinner.png)
 
 
+### Checkout confirmation
 
 
+-   The checkout confirmation page provides a summary of the order for users and a link back to the shop.
+
+  ![checkout](docs/images/order-confirmation-desktop.png)
+  ![checkout](docs/images/order-confirmation-phone.png)
 
  
+### Deals
+
+-   This is the second option from the nav menu which takes users directly to the products filtered by deals.    
+-   This feature is designed to grab the attention of site visitors and entice them to see what is on offer.
+
+  ![deals](docs/images/deals-link.png)
+
+
+### My Profile
+
+-   The profile page allows the user to edit their delivery details and view their previous orders.
+-   A feedback message is sent when the profile is updated.
+
+  ![checkout](docs/images/profile-desktop.png)
+
+-   On clicking the order number the confirmation screen is shown with a button back to the profile page
+
+  ![profile](docs/images/previous-order.png)
 
 
 
