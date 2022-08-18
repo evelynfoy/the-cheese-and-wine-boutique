@@ -52,7 +52,8 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_basket'))
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form \
             Please double check your information.')
@@ -60,9 +61,9 @@ def checkout(request):
 
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, "There's nothing in your basket at the moment")
+            messages.error(request,
+                           "There's nothing in your basket at the moment")
             return redirect(reverse('products'))
-
         current_basket = basket_contents(request)
         total = current_basket['grand_total']
         stripe_total = round(total * 100)
@@ -106,8 +107,9 @@ def checkout(request):
 
 
 def send_confirmation_email(order):
-    """ 
-        Send Confirmation Email with details in settings and in the order passed in
+    """
+        Send Confirmation Email with details in settings and in the
+        order passed in
     """
     cust_email = order.email
     subject = render_to_string(
@@ -164,5 +166,3 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-
-

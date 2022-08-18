@@ -7,7 +7,7 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile()
         exclude = ('user',)
 
-    def __init__(self, *args,**kwargs):
+    def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
         labels and set autofocus on first field

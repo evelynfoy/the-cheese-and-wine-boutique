@@ -168,12 +168,13 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ 
-        Allows the store owner to edit product details.
-        Only the relevant details are displayed for the product and category
-        If entered details are valid the form is saved and a success message displayed
-        and the user is returned to the product details page for the product
-        otherwise an error message is displayed
+    """
+    Allows the store owner to edit product details.
+    Only the relevant details are displayed for the product and category
+    If entered details are valid the form is saved and a success message
+    displayed
+    and the user is returned to the product details page for the product
+    otherwise an error message is displayed
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -270,7 +271,6 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
     product = get_object_or_404(Product, pk=product_id)
     if product.category.name == 'cheese':
         cheese = get_object_or_404(Cheese, pk=product_id)

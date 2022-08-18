@@ -1,4 +1,6 @@
-""" Contains context for shopping basket """
+"""
+Contains context for shopping basket
+"""
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
@@ -7,10 +9,10 @@ from products.models import Product
 
 def basket_contents(request):
     """
-        A context processor which reads through the basket items in the
-        request session, calculates the number of items, total and delivery
-        cost which it returns as a context making these details available to
-        all templates.
+    A context processor which reads through the basket items in the
+    request session, calculates the number of items, total and delivery
+    cost which it returns as a context making these details available to
+    all templates.
     """
     basket_items = []
     total = 0
