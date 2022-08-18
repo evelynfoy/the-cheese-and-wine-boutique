@@ -142,7 +142,7 @@ a.category-badge > span.badge:hover {
 }
 
 .header-container {
-    padding-top: 7rem;
+    padding-top: 13rem;
     font-size: 1.5rem;
     padding-bottom: 5rem;
 }
@@ -284,6 +284,12 @@ a.text-wine:hover {
 
 }
 
+.dropdown-item:active {
+    
+    color: var(--white)
+
+}
+
 .custom-toggler-margin {
     margin-right: 2rem;
 }
@@ -322,6 +328,10 @@ a.text-wine:hover {
         margin: 0;
     }
 
+    .header-container {
+        padding-top: 6rem;
+    }
+    
     .navbar-text {
         padding-left: 2rem;
     }
