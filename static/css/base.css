@@ -142,7 +142,7 @@ a.category-badge > span.badge:hover {
 }
 
 .header-container {
-    padding-top: 7rem;
+    padding-top: 13rem;
     font-size: 1.5rem;
     padding-bottom: 5rem;
 }
@@ -162,7 +162,6 @@ a.category-badge > span.badge:hover {
 .message-container {
     position: fixed;
     top: 120px;
-    right:25%;
     z-index: 999999999999;
 }
 
@@ -284,6 +283,12 @@ a.text-wine:hover {
 
 }
 
+.dropdown-item:active {
+    
+    color: var(--white)
+
+}
+
 .custom-toggler-margin {
     margin-right: 2rem;
 }
@@ -320,6 +325,10 @@ a.text-wine:hover {
     .social-media {
         font-size: 2rem;
         margin: 0;
+    }
+
+    .header-container {
+        padding-top: 6rem;
     }
 
     .navbar-text {

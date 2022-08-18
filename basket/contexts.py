@@ -16,16 +16,26 @@ def basket_contents(request):
     total = 0
     product_count = 0
     basket = request.session.get('basket', {})
+    missing_items = []
     for item_id, quantity in basket.items():
-        product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.price
-        product_count += quantity
-        basket_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-            'line_total': product.price * quantity
-        })
+        try:
+            product = get_object_or_404(Product, pk=item_id)
+            total += quantity * product.price
+            product_count += quantity
+            basket_items.append({
+                'item_id': item_id,
+                'quantity': quantity,
+                'product': product,
+                'line_total': product.price * quantity
+            })
+        except Exception:
+            missing_items.append(item_id)
+
+    if missing_items:
+        for item_id in missing_items:
+            basket = request.session.get('basket', {})
+            basket.pop(item_id)
+            request.session['basket'] = basket
 
     delivery = (total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE))/100
 
