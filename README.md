@@ -1,6 +1,6 @@
 # The Cheese and Wine Boutique
 
-<h2 align="center"><img src="">Am I Responsive Screen Shot</h2> 
+![Am I responsive](docs/images/am-i-responsive.png) 
 
 [View the live project here.](https://the-cheese-and-wine-boutique.herokuapp.com/)
 
@@ -173,45 +173,57 @@ The marking strategy I consider best meets the needs of the Wilsons is as follow
 
 #### Product
 
-| Name        | Type            | Key                | Other                                  |
-|-------------|-----------------|--------------------|----------------------------------------|
-| category    |                 | ForeignKey(Animal) | on_delete=models.CASCADE               |
-| sku         | CharField       |                    | max_length=254, null=True, blank=True  |
-| name        | CharField       |                    | max_digits=6, decimal_places=2         |
-| description | TextField       |                    |                                        |
-| price       | DecimalField    |                    | max_digits=6, decimal_places=2         |
-| size        | CharField       |                    | max_length=254                         |
-| image_url   | URLField        |                    | max_length=1024, null=True, blank=True |
-| image       | CloudinaryField |                    | default='placeholder'                  |
+| Name        | Type            | Key                 | Other                                  |
+|-------------|-----------------|---------------------|----------------------------------------|
+| category    | OneToMany       | ForeignKey(Product) | on_delete=models.CASCADE               |
+| sku         | CharField       |                     | max_length=254, null=True, blank=True  |
+| name        | CharField       |                     | max_digits=6, decimal_places=2         |
+| description | TextField       |                     |                                        |
+| price       | DecimalField    |                     | max_digits=6, decimal_places=2         |
+| size        | CharField       |                     | max_length=254                         |
+| image_url   | URLField        |                     | max_length=1024, null=True, blank=True |
+| image       | CloudinaryField |                     | default='placeholder'                  |
 
 
 #### Cheese
 
-| Name        | Type      | Key                 | Other                                |
-|-------------|-----------|---------------------|--------------------------------------|
-| Product     |           | ForeignKey(Product) | on_delete=models.CASCADE             |
-| Milk        | CharField |                     | max_length=20, null=True, blank=True |
-| Region      | CharField |                     | max_length=20, null=True, blank=True |
-| Rennet      | TextField |                     | max_length=20, null=True, blank=True |
-| Cheese Type | CharField |                     | max_length=20, null=True, blank=True |
-| Age         | CharField |                     | max_length=20, null=True, blank=True |
+This model has a one to one relationship with the product model.    
+Each product can have an entry in the cheese table if it is a cheese category type.
+
+| Name        | Type      | Key                    | Other                                |
+|-------------|-----------|------------------------|--------------------------------------|
+| Product     | OneToOne  | OneToOneField(Product) | on_delete=models.CASCADE             |
+| Milk        | CharField |                        | max_length=20, null=True, blank=True |
+| Region      | CharField |                        | max_length=20, null=True, blank=True |
+| Rennet      | TextField |                        | max_length=20, null=True, blank=True |
+| Cheese Type | CharField |                        | max_length=20, null=True, blank=True |
+| Age         | CharField |                        | max_length=20, null=True, blank=True |
 
 #### Wine
 
-| Name              | Type      | Key                 | Other                                             |
-|-------------------|-----------|---------------------|---------------------------------------------------|
-| Product           |           | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
-| Origin            | CharField |                     | max_length=20, null=True, blank=True              |
-| Grape             | CharField |                     | max_length=20, null=True, blank=True              |
-| Wine Type         | TextField |                     | max_length=20, null=True, blank=True              |
-| Production Method | CharField |                     | max_length=20, null=True, blank=True              |
+This model has a one to one relationship with the product model.    
+Each product can have an entry in the wine table if it is a wine category type.
+
+| Name              | Type      | Key                    | Other                                             |
+|-------------------|-----------|------------------------|---------------------------------------------------|
+| Product           | OneToOne  | OneToOneField(Product) | on_delete=models.CASCADE, one to one relationship |
+| Origin            | CharField |                        | max_length=20, null=True, blank=True              |
+| Grape             | CharField |                        | max_length=20, null=True, blank=True              |
+| Wine Type         | TextField |                        | max_length=20, null=True, blank=True              |
+| Production Method | CharField |                        | max_length=20, null=True, blank=True              |
 
 #### Deal
 
-| Name    | Type | Key                 | Other                                             |
-|---------|------|---------------------|---------------------------------------------------|
-| Product |      | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
-| Product |      | ForeignKey(Product) | on_delete=models.CASCADE, one to one relationship |
+This model has three one to one relationships with the product model.    
+Each product can have an entry in the deal table if it is a deal category type.    
+Then two other products can be associated with the deal. They can be any mix of cheese or wines    
+e.g. 2 cheeses, a wine and a cheese or two wines.  
+
+| Name    | Type      | Key                    | Other                                             |
+|---------|-----------|------------------------|---------------------------------------------------|
+| Product | OneToOne  | OneToOneField(Product) | on_delete=models.CASCADE, one to one relationship |
+| Product | OneToOne  | OneToOneField(Product) | on_delete=models.CASCADE, one to one relationship |
+| Product | OneToOne  | OneToOneField(Product) | on_delete=models.CASCADE, one to one relationship |
 
 ### Agile Methodology
 [Github issues](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues) were used to manage the development of this project. I set up a [project backlog](https://github.com/evelynfoy/the-cheese-and-wine-boutique/milestones) milestone containing all the issues at the start.    
@@ -228,51 +240,70 @@ I used branches to implement all user stories and pull requests to merge the wor
 Minor tweaks and documentation was done on the main branch. 
 
 
-## Features
+## Existing Features
 The site consists of a home page featuring a hero image, an inspirational text area, a newsletter signup form and a footer.    
-It has a navbar which displays the site name and options to register, login, shop or view the contents of a virtual shopping basket.    
+It has a navbar which displays the site name and options to register, login, shop or view the contents of a virtual shopping basket.     
+It also includes a search bar and a menu option to filter the products on deals only. This is to encourage users to try new products.   
 The shop option displays the products available for purchase at the store and allows the user to add a specified quantity of the item to the virtual shopping basket.    
 There is a running total of the basket displayed at all times and the contents can be viewed or adjusted as required.    
 From the basket the checkout button provides the means for the user to purchase the items in a secure way using stripe payments.
 The user can register and login to view their orders and save their personal information or shop annoynmously.
 The site owner can also maintain the product list once logged in. 
 
-### Existing Features
+### Navigation Bar
 
-Navigation Bar
+
+![navigation-desktop](docs/images/navigation-desktop.png)
+![navigation-phone](docs/images/navigation-phone.png)
+
 
 The navigation bar is fixed in position at the top of the page.
 It includes 
 1) The company logo which is also a link to the home page.
 2) Links to the other available pages on the site e.g. the shop or products, the basket and the user options which vary on login.
 3) A running total of the contents of the customers virtual shopping basket. This doubles as a link to the basket page.
+4) A search bar to search through all the products name and description.
+
+![user-options](docs/images/user-options-logged-in.png)
+![user-options](docs/images/user-options-logged-out.png)
 
 The user options are represented by a font awesome icon which on click displays a dropdown menu with the following options:-
 1) If the user is staff then Project Administration.
 2) If user signed in then the user name is displayed and a logout link
 3) If no user is logged in then both a register and login option are presented.
 
-The navigation bar is fully responsive and the links are replaced on smaller screens with a hamburger icon.    
-The User options and basket total move to the next line.
 
-Hero Image
+The navigation bar is fully responsive and the links are replaced on smaller screens with a hamburger icon.    
+The User options, search and basket total move to the next line.
+
+### Hero Image
+
+![hero-image](docs/images/hero-image.png)
 
 -   The landing page image is an inticing photograph of a selection of wine and cheese which features a zoom in affect on page load.
 
-Inspirational Section
+### Inspirational Section
+
+![inspiration-section](docs/images/inspirational-section.png)
 
 -   This area features headings and text to interest the user in the site and entice them to explore further.
 
-The Subscribe to Newsletter Section
+### The Subscribe to Newsletter Section
+
+![newsletter](docs/images/newsletter-desktop.png)
+![newsletter](docs/images/newsletter-phone.png)
 
 -   This section invites the user to subscribe to the businesses newsletter by entering their email address.    
     It uses an email marketing company called Mailchimp to provide this service.
 
-Footer
+### Footer
+
+![footer](docs/images/footer-desktop.png)
+![footer](docs/images/footer-phone.png)
 
 -   The footer features the businesses address and email and a link to their facebook page.
 
-Shop
+### Shop
 
 -   This page displays all the products that are available to purchase on the site.
 -   There are three different types of product.
@@ -283,23 +314,33 @@ Shop
 -   The Deal type allows the business owner to package two items together for a special price. This could    
     be two cheeses, two wines or a wine and a cheese.
 
+![shop](docs/images/shop-tablet.png)
+![shop](docs/images/shop-phone.png)
 
-Product Details
+### Product Details
 
 -   Clicking on a product displays the full details for that item.
 -   Only the appropriate details appear for the product e.g. cheese details for cheeses etc.
+-   Also, only filled in details are shown. Blank fields are not displayed on the screen.
 -   There is a quantity field that takes a number and an `Add to basket` button to select this product for purchase.
 -   The user can type in an amount or use the arrow buttons which don't go below 1.
 -   When an item is added to the basket a success message appears informing the user.    
-    It also summarises the contents of the basket and shows the total excluding delivery.
-    There is also a button to go to checkout. A secure payment facilitiy is indicated by displaying a lock item on the button.
--   The message can be dismisses by clicking the x.
+-   It also summarises the contents of the basket and shows the total excluding delivery.    
+-   There is also a button to go to checkout. A secure payment facilitiy is indicated by displaying a lock item on the button.
+-   The message can be dismisses by clicking the x but it also disappears by itself after a few seconds.
+-   This page also has an edit and delete link for staff only (superusers) from which they can edit and delete products.
 
+![details](docs/images/details-cheese-tablet.png)
+![details](docs/images/details-cheese-phone.png)
+![details](docs/images/details-wine-desktop.png)
+![details](docs/images/details-wine-phone.png)
+![details](docs/images/details-deal-desktop.png)
+![details](docs/images/details-deal-phone.png)
 
-Product Administration
+### Product Administration
 
 -   This menu option is available to staff only.
--   It displays the products and allows items to be added, updated or deleted.
+-   It allows products to be added.
 
 -   The Category is a drop down menu offering three choices.    
     These categories can be maintained by the owner who can add more if required via the django admin screen.
@@ -307,24 +348,39 @@ Product Administration
     Choosing the cheese category displays the cheese related details.    
     Choosing the wine category displays the wine related details.     
     Choosing the deal category allows two items to be selected from a dropdown menu.
--   There are a core set of details requested for all products e.g. price.    
+-   There are a core set of details requested for all products e.g. price.   
+
+![admin](docs/images/product-administration.png)
+
     If a category other than cheese,wine or deal is made available then only the core details will be displayed.    
     These core details include loading an image which is displayed on the products and product details page.    
     If no image is loaded a default placeholder image is displayed instead.
 
--   There is a cancel button provided and an action button to proceed with the add, edit or delete action.
+-   There is a cancel button provided and an add button to proceed with the add action.
 
+![admin](docs/images/wine-administration.png)
+![admin](docs/images/wine-administration-phone.png)
+![admin](docs/images/cheese-administration.png)
+![admin](docs/images/cheese-administration-phone.png)
+![admin](docs/images/deal-administration.png)
+![admin](docs/images/deal-administration-phone.png)
 
-Authentication
+### Authentication
 
 -   If the user is not logged in then they have the option to either register or login.
 -   If the user is logged in they have the option to logout.
 
+![admin](docs/images/sign-in.png)
+![admin](docs/images/sign-out.png)
+![admin](docs/images/register.png)
 
-Shopping Basket
+
+### Shopping Basket
 
 -   If the users virtual shopping basket is empty then this page will just display a message that the basket is empty and     
     provide a link back to the Shop or Products page.
+
+    ![basket](docs/images/empty-basket.png)
 
 -   If there are items in the basket then these are listed displaying the core details for the product and the quantity selected.    
     A small image of the product is displayed.    
@@ -336,8 +392,10 @@ Shopping Basket
 
 -   There is a button link back to the shop or product page and a button link to continue to checkout.    
 
+   ![basket](docs/images/basket-desktop.png)
+   ![basket](docs/images/basket-phone.png)
 
-Checkout
+### Checkout
 
 -   The checkout page provides a form for users to fill in with their details.
 -   It also contains a summary of the items in the basket which will be used to create the order.
@@ -350,6 +408,11 @@ Checkout
 -   There is a button provided for confirming the payment. It displays a lock icon to indicate security. 
 -   There is also a little summary message in red displayed with the total amount that will be charged to the card on confirming the payment.
 -   There is a button link provided at this point to return to the basket for making adjustments.
+-   If logged in the user can choose to save their delivery details which are defaulted on the checkout page for them.
+
+   ![checkout](docs/images/checkout-desktop-loggedout.png)
+   ![checkout](docs/images/checkout-phone-loggedout.png)
+   ![checkout](docs/images/checkout-loggedin.png)
 
 
 
