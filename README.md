@@ -526,7 +526,30 @@ The W3C Markup Validator was used to validate every page of the project to ensur
 | products.js           |  [Results](docs/testing/jshint/products.png)         | Had 2 missing semi-colons - corrected   
 | products-edit.js      |  [Results](docs/testing/jshint/products-edit.png)    | No errors   
 
-#### Python (Pep8)
+#### Python (Pep8) - 
+Results from http://pep8online.com/
+
+| App    | Name                 | image | Result |
+|--------|----------------------|-------|--------|
+| Basket | contexts.py  | [Results](docs/testing/pep8/basket-contexts.png)     | All right  
+| Basket | views.py   |  [Results](docs/testing/pep8/basket-views.png)  | All right  
+| Basket | urls.py           |  [Results](docs/testing/pep8/basket-urls.png)         | All right  
+| Products | models.py      |  [Results](docs/testing/pep8/products-models.png)    | All right   
+| Products | views.py      |  [Results](docs/testing/pep8/products-views.png)    | One line too long   
+| Products | forms.py      |  [Results](docs/testing/pep8/products-forms.png)    | No errors  
+| Profile | models.py      |  [Results](docs/testing/pep8/profiles-models.png)    | No errors   
+| Profile | views.py      |  [Results](docs/testing/pep8/profiles-views.png)    | No errors  
+| Profile | forms.py      |  [Results](docs/testing/pep8/profiles-forms.png)    | No errors  
+| Checkout | models.py      |  [Results](docs/testing/pep8/checkout-models.png)    | Two lines too long   
+| Checkout | views.py      |  [Results](docs/testing/pep8/checkout-views.png)    | No errors  
+| Checkout | forms.py      |  [Results](docs/testing/pep8/checkout-forms.png)    | No errors  
+| Checkout | signals.py      |  [Results](docs/testing/pep8/checkout-signals.png)    | No errors  
+
+In most cases I split lines that were too long but a few were more awkward to split so I left them alone rather than risking breaking the application.    
+This is something I would sort out with more time.
+
+
+    
 
 
 #### Lighthouse 
