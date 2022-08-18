@@ -18,7 +18,6 @@ $(document).ready(function() {
         $('#id_cheese_type').attr('required', false);
     }
     else if (cat == 3) {
-        console.log(cat);
         $('#dealDiv').show();
         $('#cheeseDiv').hide();
         $('#wineDiv').hide();
