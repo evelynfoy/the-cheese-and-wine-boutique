@@ -614,12 +614,12 @@ In most cases I split lines that were too long but a few were more awkward to sp
 This is something I would sort out with more time.
 
 #### Lighthouse 
-- Accessibility score 98 
-    - search and user profile links do not have discernable name
-    - this could probably be resolved using aria-labelling but I did not have time prior to submission
+- Accessibility score 100
+    - Was previously 98 with comment about 'Links do not have a discernible name' so I added some aria labels to the icons without text descriptions. 
 - SEO score 100
 - Best Practises score 83 is a bit low as it seems to have some issues with jquery vulnerabilities which I will investigate further.
-- See [Results](docs/testing/lighthouse.png)
+- See [Original Results](docs/testing/images/lighthouse.png)
+- See [Improved Results](docs/testing/images/lighthouse-accessibility.png)
 <br>
 
 ### Automated Tests
