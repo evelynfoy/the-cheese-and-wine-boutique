@@ -491,18 +491,27 @@ The User options, search and basket total move to the next line.
 ### Languages
 * HTML
 * CSS
+* Javascript
 * Python
 
-### Libraries & Framework
-* Django
-* Stripe
-* Coudinary
-
-### Tools
+### Libraries & Framework & Tools
+* [Django](https://en.wikipedia.org/wiki/Django_(web_framework) "django")
+* [Django crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/ "crispy-forms")
+* [Django User Authentication](https://docs.djangoproject.com/en/3.2/topics/auth/ "auth")
+* [Stripe](https://stripe.com/en-gb "Stripe")
+* [cloudinary](https://cloudinary.com/ "cloudinary")
 * [Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
 * [Google Fonts](https://fonts.google.com/ "Google Fonts")
 * [Font Awesome](https://fontawesome.com/ "Font Awesome icons" )
-
+* [Gunicorn](https://en.wikipedia.org/wiki/Gunicorn "gunicorn")
+* [psycopg2](https://wiki.postgresql.org/wiki/Psycopg "psycogg2")
+* [Sitemap Generator](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
+* [HTML validator](https://validator.w3.org/ "HTML")
+* [CSS Validator](https://jigsaw.w3.org/css-validator/ "CSS")
+* [Javascript Validator](https://jshint.com/ "JS")
+* [Python Validator](http://pep8online.com/ "Python")
+* [Gitpod](https://www.gitpod.io/ "Gitpod")
+* [favicon.io](https://favicon.io/ "favicon.io")
 
 ## Testing
 My testing aproach included:
