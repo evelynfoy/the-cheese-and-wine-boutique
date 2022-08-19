@@ -225,6 +225,54 @@ e.g. 2 cheeses, a wine and a cheese or two wines.
 | Product | OneToOne  | OneToOneField(Product) | on_delete=models.CASCADE, one to one relationship |
 | Product | OneToOne  | OneToOneField(Product) | on_delete=models.CASCADE, one to one relationship |
 
+
+#### Order
+This model holds the order details. It has a one to many relationship with the user profile model so one user can have many orders. 
+
+| Name            | Type          | Key                     | Other                                                                   |
+|-----------------|---------------|-------------------------|-------------------------------------------------------------------------|
+| order_number    | CharField     |                         | max_length=32, null=False, editable=False                               |
+| user_profile    |               | ForeignKey(UserProfile) | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders' |
+| full_name       | CharField     |                         | max_length=50, null=False, blank=False                                  |
+| email           | EmailField    |                         | max_length=254, null=False, blank=False                                 |
+| phone_number    | CharField     |                         | max_length=20, null=False, blank=False                                  |
+| country         | CountryField  |                         | blank_label='Country *', null=False, blank=False                        |
+| postcode        | CharField     |                         | max_length=20, null=True, blank=True                                    |
+| town_or_city    | CharField     |                         | max_length=20, null=True, blank=True                                    |
+| street_address1 | CharField     |                         | max_length=80, null=False, blank=False                                  |
+| street_address2 | CharField     |                         | max_length=80, null=True, blank=True                                    |
+| county          | CharField     |                         | max_length=80, null=True, blank=True                                    |
+| date            | DateTimeField |                         | auto_now_add=True                                                       |
+| delivery_cost   | DecimalField  |                         | max_digits=6, decimal_places=2, null=False, default=0                   |
+| order_total     | DecimalField  |                         | max_digits=10, decimal_places=2, null=False, default=0                  |
+| grand_total     | DecimalField  |                         | max_digits=10, decimal_places=2, null=False, default=0                  |
+
+
+#### OrderLineItem
+This model holds the order details for each item on the order. It has a many to one relationship with the order model so one order can have many line items.
+
+| Name            | Type          | Key                 | Other                                                                       |
+|-----------------|---------------|---------------------|-----------------------------------------------------------------------------|
+| order           |               | ForeignKey(Order)   | null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems' |
+| product         |               | ForeignKey(Product) | null=False, blank=False, on_delete=models.CASCADE                           |
+| quantity        | IntegerField  |                     | null=False, blank=False, default=0                                          |
+| lineitem_total  | DecimalField  |                     | max_digits=6, decimal_places=2, null=False, blank=False, editable=False     |
+
+#### User Profile
+This model holds the default delivery details for the user and it has a one to one relationship with the User model which extends the details 
+that can be held for each user.
+
+| Name                    | Type         | Key                 | Other                                                                   |
+|-------------------------|--------------|---------------------|-------------------------------------------------------------------------|
+| user                    | OneToOne     | OneToOneField(User) | on_delete=models.CASCADE                                                |
+| default_phone_number    | CharField    |                     | max_length=20, null=True, blank=True                                    |
+| default_street_address1 | CharField    |                     | max_length=80, null=True, blank=True                                    |
+| default_street_address2 | CharField    |                     | max_length=80, null=False, blank=False                                  |
+| default_town_or_city    | CharField    |                     | max_length=40, null=True, blank=True                                    |
+| default_postcode        | CharField    |                     | max_length=20, null=True, blank=True                                    |
+| default_country         | CountryField |                     | blank_label='Country', null=True, blank=True                            |
+
+
 ### Agile Methodology
 [Github issues](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues) were used to manage the development of this project. I set up a [project backlog](https://github.com/evelynfoy/the-cheese-and-wine-boutique/milestones) milestone containing all the issues at the start.    
 Then I set up a [kanban board]( https://github.com/evelynfoy/the-cheese-and-wine-boutique/projects/1) for the project and each week I created a new milestone to use to complete an agile sprint and moved in a number of issues to complete.    
