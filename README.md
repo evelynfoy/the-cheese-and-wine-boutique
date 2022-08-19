@@ -505,6 +505,14 @@ The User options, search and basket total move to the next line.
 
 
 ## Testing
+My testing aproach included:
+-   Writing and testing [automated tests](docs/testing/automated-testing.md "Automated Testing") for some functionality as the functionality is written.
+-   [User Stories Testing](docs/testing/user-story-testing.md) is performed when a user story is complete and used as a measure that it is ready to be merged into the main application. 
+    It involves confirming that the acceptance tests listed in the user story in github were passed.
+-   Once all the user stories were done I created a [SPIKE](https://github.com/evelynfoy/the-cheese-and-wine-boutique/issues/42) issue listing all the pages that needed testing and also different versions of pages e.g. Mobile, Desktop
+-   I then throughly tested all the pages listed and tried to break the application. All issues resulting from this were added as issues in github.
+-   I prioritized them and worked through as many as I had time for.
+-   These bugs are listed in the [Manual Tests area](docs/testing/additional-bug-testing.md)
 
 ### Code Validation
 
@@ -558,7 +566,7 @@ This is something I would sort out with more time.
 <br>
 
 ### Automated Tests
--   [Model Tests](/docs/testing/model-test.md) 
+- The automated testing details are contained [here](docs/testing/automated-testing.md "Automated Testing").   
 
 ### Testing User Stories from User Experience (UX) Section
 

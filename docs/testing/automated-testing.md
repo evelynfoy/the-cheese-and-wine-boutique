@@ -1,5 +1,6 @@
 ## Automated Testing
-Automated tests were created for the Products Application
+Automated tests were created for the Products Application only due to time constraints.
+There are a total of 18 tests - 5 for models and 13 for views -  [all tests pass](/docs/testing/images/automated-testing.png).
 
 ### Models
 Models tested:
@@ -23,15 +24,15 @@ Views tested:
     2) Tests rendering of Product Detail view for a wine product
     3) Tests rendering of Product Detail view for a deal product
 -   add_product
-
-
-Example screenshots
-
-Before the wine model was created the test produced this error
-
-[No such table](/docs/testing/testwinemodelerr1.jpg)
-
-[Test runs successfully](/docs/testing/testwinemodelerrafter.jpg)
-
-
-
+    1) Tests that a product can be added.
+    2) Tests the templates rendered are `products/add_product.html` and `base.html`.
+-   can_add    
+    1) Tests that a product can be added.
+    2) Tests that a cheese product can be added.
+    3) Tests that a wine product can be added.
+    4) Tests that a deal product can be added.
+-   edit_product
+    1) Tests that a cheese product can be edited.
+    2) Tests the templates rendered are `products/edit_product.html` and `base.html`.
+-   can_edit
+    1) Tests that a cheese product can be edited.
