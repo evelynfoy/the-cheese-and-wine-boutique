@@ -642,7 +642,7 @@ See [Additional Issue or Bug Testing](docs/testing/additional-bug-testing.md)
 ### Code
 * [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for code inspiration, help and advice.
 * [Stack Overflow](https://stackoverflow.com/ "Stack Overflow") for help and assistance.
-* [Code Institute](https://codeinstitute.net/ie/ "Code Institute") for help and inspiration from the run through projects. 
+* [Code Institute](https://codeinstitute.net/ie/ "Code Institute") for help and inspiration from the example projects in particular the Boutique Ado project. 
 
 ### Content
 [Sheridans Cheesemongers](https://sheridanscheesemongers.com/)
