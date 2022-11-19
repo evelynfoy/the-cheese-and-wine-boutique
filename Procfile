@@ -1,1 +1,0 @@
-web: gunicorn cheese_wine_boutique.wsgi:application
